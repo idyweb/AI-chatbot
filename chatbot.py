@@ -4,6 +4,7 @@ import pickle
 import numpy as np
 import nltk
 import requests
+import threading
 
 from nltk.stem import WordNetLemmatizer
 from keras.models import load_model
@@ -76,8 +77,12 @@ def get_response(intents_list, intents_json):
 def run_chatbot():
     print("Go! Bot is running!")
 
-    while True:
-        message = input("")
-        intents_list = predict_class(message)
-        result = get_response(intents_list, intents)
-        print(result)
+    def chatbot_thread():
+        while True:
+            message = input("")
+            intents_list = predict_class(message)
+            result = get_response(intents_list, intents)
+            print(result)
+
+    # Start the chatbot in a separate thread
+    threading.Thread(target=chatbot_thread).start()
