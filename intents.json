@@ -1,0 +1,470 @@
+{
+    "intents": [
+      {
+        "tag": "greeting",
+        "patterns": [
+          "Hi there", "How are you", 
+        "Is anyone there?", 
+        "Hey",
+        "Hola",
+        "Hello",
+        "Good day"],
+        "responses": [
+          "Hello", 
+        "Hey :-)", 
+        "Hi there, how can I help?"
+      ],
+        "context": [""]
+      },
+      {
+        "tag": "goodbye",
+        "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
+        "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+        "context": [""]
+      },
+      {
+        "tag": "thanks",
+        "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+        "responses": ["My pleasure", "You're Welcome"],
+        "context": [""]
+      },
+      {
+        "tag": "name",
+        "patterns": [
+           "name",
+           "your name",
+           "do you have a name",
+           "what are you called",
+           "what is your name",
+           "what should I call you",
+           "whats your name?",
+           "what are you",
+           "who are you",
+           "who is this",
+           "what am i chatting to",
+           "who am i taking to",
+           "what are you"
+        ],
+        "responses": [
+           "You can call me Mind Reader.",
+           "I'm Mind Reader",
+           "I am a Chatbot.",
+           "I am your helper"
+        ],
+        "context_set": ""
+     },
+      {
+        "tag": "funny",
+        "patterns": [
+          "Tell me a joke!",
+          "Tell me something funny!",
+          "Do you know a joke?"
+        ],
+        "responses": [
+          "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
+          "What did the buffalo say when his son left for college? Bison."
+        ]
+      },
+      {
+        "tag": "mission",
+        "patterns": ["What is the Mission and Vision of Bingham University?"],
+        "responses": ["Bingham University is a school that produce graduates that have both knowledge and skills for self-reliance in the fear of Christ Vision To be a World-Class Conventional University in a Christ-centered environment"],
+        "context": [""]
+      },
+      {
+        "tag": "location",
+        "patterns": ["Where is Bingham University located?", "Can you tell me the location of Bingham University?", "What is the address of Bingham University?"],
+        "responses": ["Bingham University is located in Karu, Nasarawa State, Nigeria.", "Bingham University is located in  Km 26 Abuja - Keffi Express Way Kodope, Nasarawa State"],
+        "context": [""]
+    },
+    {
+        "tag": "programs",
+        "patterns": ["What programs does Bingham University offer?", "Can you tell me about the courses at Bingham University?", "What can I study at Bingham University?"],
+        "responses": ["Bingham University offers a variety of programs in fields such as Medicine, Law, Arts, Sciences, and Social Sciences."],
+        "context": [""]
+    },
+    {
+        "tag": "fees",
+        "patterns": ["information about fee",
+        "information on fee",
+        "tell me the fee",
+        "college fee",
+        "fee per semester",
+        "what is the fee of each semester",
+        "what is the fees of each year",
+        "what is fee",
+        "what is the fees",
+        "how much is the fees",
+        "fees for first year",
+        "fees",
+        "about the fees",
+        "tell me something about the fees",
+        "What is the fees of hostel",
+        "how much is the fees",
+        "hostel fees","How much is the fees at Bingham University?", "Can you tell me about the fees at Bingham University?", "What is the cost of studying at Bingham University?"],
+        "responses": ["The tuition fee at Bingham University varies depending on the program. For the most accurate information, please visit the university's official website at https://binghamuni.edu.ng/v2/schedule-of-fees.", "Fees for Bingham University could be found here https://binghamuni.edu.ng/v2/schedule-of-fees"],
+        "context": [""]
+    },
+    
+    {
+      "tag": "facilities",
+      "patterns": ["What facilities does Bingham University offer?", "Can you tell me about the facilities available at Bingham University?"],
+      "responses": ["Bingham University provides various facilities including libraries, sports facilities, housing, and administrative services to support student life and academic pursuits."],
+      "context": [""]
+  },
+    {
+        "tag": "scholarship",
+        "patterns": ["Does Bingham University offer scholarships?", "Can I get a scholarship at Bingham University?", "What scholarship opportunities are available at Bingham University?"],
+        "responses": ["Bingham University offers scholarships to deserving students. For more information on scholarship opportunities, please visit the university's official website at https://binghamuni.edu.ng.."],
+        "context": [""]
+    },
+    {
+        "tag": "contact",
+        "patterns": ["more info",
+        "contact info",
+        "how to contact college",
+        "college telephone number",
+        "college number",
+        "What is your contact no",
+        "Contact number?",
+        "how to call you",
+        "College phone no?",
+        "how can i contact you",
+        "Can i get your phone number",
+        "how can i call you",
+        "phone number",
+        "phone no",
+        "call","How can I contact Bingham University?", "Can you provide me with the contact information for Bingham University?", "What is the phone number and email address of Bingham University?"],
+        "responses": ["You can contact Bingham University through their official website or by phone at +234 803 345 5202. You can also send an email to vc@binghamuni.edu.ng"],
+        "context": [""]
+    },
+      {
+        "tag": "application",
+        "patterns": ["How can I apply for admission to Bingham University?", "What are the steps to apply for admission at Bingham University?", "Can you guide me through the application process for Bingham University?"],
+        "responses": ["The application process for Bingham University involves the following steps:\n1. Visit the official website at https://binghamuni.edu.ng/apply and create an account if you haven't already.\n2. After creating an account, check your email for an activation link and follow the instructions to activate your account.\n3. Once your account is activated, log in to the portal and navigate to the 'My Payments' menu to access the application form payment page.\n4. On the payment page, initiate a transaction using the 'Pay with Remita' button. Upon completion, a payment slip of N2000 will be generated.\n5. Take the payment slip to any bank branch to complete the transaction or pay online using your ATM card."],
+        "context": [""]
+      },
+      {
+        "tag": "completed application",
+        "patterns": ["How do I submit my completed application forms to Bingham University?", "What are the steps for submitting completed forms to Bingham University?", "Can you guide me through the submission process for Bingham University's application forms?"],
+        "responses": ["To submit completed application forms to Bingham University, follow these steps:\n1. After successfully completing the payment transaction, access the online application forms. Fill out the forms completely.\n2. Once the forms are filled out, submit them using the 'Form submission' button.\n3. Print out the filled forms.\n4. Submit the printed forms to the University’s Admissions Office on or before the day of the screening.\nFor technical enquiries or complaints, contact the following:\n- Email: registrar@binghamuni.edu.ng, webmster@binghamuni.edu.ng, systemadmin@binghamuni.edu.ng\n- Phone: 09013670234\nProvide the following details when contacting: RRR No., First name, Last name, Amount, Your phone number, and the details of the problem(s) encountered.\nPlease note that the guidelines for registration can be found on the University's website: www.binghamuni.edu.ng/admission"],
+        "context": [""]
+      },
+      {
+        "tag": "utme",
+        "patterns": ["What are the admission requirements for UTME candidates at Bingham University?", "What qualifications do I need to meet for UTME admission at Bingham University?", "Can you provide information about the admission criteria for UTME candidates at Bingham University?"],
+        "responses": ["For UTME Candidates:\n- All candidates must have taken the 2023/2024 UTME Examination and obtained a minimum score of 150.\n- The minimum qualification for Degree programmes is five (5) O/Level Credits in relevant subjects, including Mathematics and English at not more than two (2) sittings.\nFor Direct Entry Candidates:\n- Direct Entry admission candidates must have completed the JAMB Direct Entry form.\n- They should have obtained five (5) relevant O/Level Credits including Mathematics and English at not more than two (2) sittings.\n- Additionally, an A/Level result (such as IJMB, National Diploma with a minimum of Lower Credit, and Cambridge A/Levels result) is required for Direct Entry admission."],
+        "context": [""]
+      },
+      {
+        "tag": "course",
+        "patterns": ["list of courses",
+        "list of courses offered",
+        "list of courses offered in",
+        "what are the courses offered in your college?",
+        "courses?",
+        "courses offered",
+        "courses offered in (your univrsity(UNI) name)",
+        "courses you offer",
+        "branches?",
+        "courses available at UNI?",
+        "branches available at your college?",
+        "what are the courses in UNI?",
+        "what are branches in UNI?",
+        "what are courses in UNI?",
+        "branches available in UNI?",
+        "can you tell me the courses available in UNI?",
+        "can you tell me the branches available in UNI?",
+        "computer engineering?",
+        "computer",
+        "Computer engineering?",
+        "it",
+        "IT",
+        "Information Technology",
+        "AI/Ml",
+        "Mechanical engineering",
+        "Chemical engineering",
+        "Civil engineering","What academic programs does Bingham University offer?", "Can you provide a list of academic programs available at Bingham University?", "What degrees can I pursue at Bingham University?","what programs do they have?"],
+        "responses": ["Bingham University offers a wide range of academic programs across various faculties:\n\nFaculty of Environmental Sciences:\n- B. Sc. Architecture\n- B. Sc. Landscape Architecture\n- B. Sc. Estate Management\n- B. Sc. Environmental Management\n- B. Sc. Quantity Surveying\n\nFaculty of Education:\n- B. Ed. Guidance and Counseling\n- B. Ed. Psychology\n\nFaculty of Arts:\n- B. A. Philosophy\n- B. A. Religious Studies\n- B. A. English and Literary Studies\n- B.A Theology\n\nFaculty of Administration:\n- B. Sc. Entrepreneurship\n- B.Sc. Accounting\n- B.Sc. Business Administration\n- B.Sc. Supply Chain Management\n- B.Sc. Procurement Management\n\nFaculty of Social Sciences:\n- B.Sc. Mass Communication\n- B.Sc. Economics\n- B.Sc. Political Science\n- B.Sc. Sociology\n- B.Sc. Library & Information Science\n\nFaculty of Law:\n- (LLB) Bachelor of Law\n\nFaculty of Science and Technology:\n- B.Sc. Industrial Chemistry\n- B.Sc. Physics\n- B.Sc. Computer Science\n- B.Sc. Biochemistry\n- B.Sc. Microbiology\n- B.Sc. Mathematics\n- BSc. Industrial Mathematics\n- B.Sc. Cyber Security\n- B.Sc. Information Technology\n\nFaculty of Pharmaceutical Sciences:\n- Bachelor of Pharmacy (B.Pharm)\n\nFaculty of Clinical Sciences:\n- MBBS, Medicine and Surgery\n- B. Sc. Public Health\n\nFaculty of Basic Medical Sciences:\n- B.Sc. Anatomy\n- B. Sc. Physiology\n\nFaculty of Allied Health Sciences:\n- B. NSc Nursing\n- Doctor of Optometry\n- Bachelor of Medical Laboratory Science\n- B.Sc. Radiography"],
+        "context": [""]
+      },
+      {
+        "tag": "about",
+        "patterns": ["What is the name of Bingham University?", "What is the acronym for Bingham University?", "When was Bingham University founded?"],
+        "responses": ["Bingham University, also known as BHU, was founded in 2005. and its colors are yellow."],
+        "context": [""]
+      },
+      {
+        "tag": "motto",
+        "patterns": ["What is the motto of Bingham University?"],
+        "responses": ["The motto of Bingham University is 'Mission for Service'"],
+        "context": [""]
+      },
+      {
+        "tag": "color",
+        "patterns": [ "What are the colors of Bingham University?"],
+        "responses": ["Bingham University, also known as BHU, was founded in 2005. and its colors are yellow."],
+        "context": [""]
+      },
+      
+      {
+        "tag": "about",
+        "patterns": ["Can you provide an overview of Bingham University?", "What are the key details about Bingham University?", "Tell me about Bingham University's background and features."],
+        "responses": ["Bingham University, established in 2005, is a for-profit private higher education institution located in Auta Balifi, Nasarawa, Nigeria. It is officially recognized by the National Universities Commission of Nigeria. BHU is a small-sized institution with an enrollment range of 500-999 students, offering bachelor's degrees in various areas of study. Affiliated with the Christian-Evangelical religion, BHU has a selective admission policy based on entrance examinations and academic records, with an acceptance rate range of 50-59%. International applicants are welcome to apply for enrollment. BHU provides academic and non-academic facilities and services including a library, housing, sports facilities, financial aids, scholarships, and administrative services."],
+        "context": [""]
+      },
+      {
+        "tag": "ranking",
+        "patterns": ["What are the rankings of Bingham University?", "Can you tell me about the ranking of Bingham University?", "Where does Bingham University stand in terms of rankings?"],
+        "responses": ["Bingham University is ranked 91st in Nigeria and 10652nd in the world."],
+        "context": [""]
+      },
+      {
+        "tag": "accreditation",
+        "patterns": ["Is Bingham University accredited?", "Can you provide information about the accreditation of Bingham University?", "Is Bingham University a recognized institution?"],
+        "responses": ["Yes, Bingham University is accredited by the National Universities Commission (NUC) of Nigeria."],
+        "context": [""]
+        },
+        {
+        "tag": "contact",
+        "patterns": ["What is the official website of Bingham University?", "Can you provide the web address for Bingham University's official website?", "Where can I find more information about Bingham University online?"],
+        "responses": ["The official website of Bingham University is https://binghamuni.edu.ng/", "You can contact Bingham University through their official website or by phone at +234 803 345 5202."],
+        "context": [""]
+    },
+    {
+        "tag": "website",
+        "patterns": ["What is the website of Bingham university?"],
+        "responses": ["The official website of Bingham University is https://binghamuni.edu.ng/"]
+    },
+    {
+      "tag": "hours",
+      "patterns": [
+         "timing of college",
+         "what is college timing",
+         "working days",
+         "when are you guys open",
+         "what are your hours",
+         "hours of operation",
+         "when is the college open",
+         "what about university timing",
+         "is college open on saturday",
+         "tell something about university timing",
+         "what is the university  hours",
+         "when should i come to university",
+         "when should i attend university",
+         "what is my university time",
+         "university timing",
+         "timing university"
+      ],
+      "responses": [
+         "Bingham University is open 8am-4pm Monday-Saturday!"
+      ],
+      "context_set": ""
+   },
+    {
+      "tag": "first semester",
+      "patterns": ["When is first semester resumption date?", "when are student to resume for first semester?"],
+      "responses": ["First semester of the 2023/2024 academic session is scheduled to commence on 18th September, 2023."],
+      "context": [""]
+          },
+    {
+      "tag": "first semester break",
+      "patterns": ["When is first semester break?", "when are student to for first semester break?"],
+      "responses": ["First break of the 2023/2024 academic session is scheduled to commence on February 22nd 2024 - April 5th 2024."],
+      "context": [""]
+    },
+    {
+      "tag": "second semester",
+      "patterns": ["When is second semester resumption date?", "when are student to resume for second semester?"],
+      "responses": ["Second semester of the 2023/2024 academic session is scheduled to commence on April 8th 2024.\n Second Semester Lectures Begin April 9th 2024.\n Departmental week is on April 15th - April 16th 2024.\n Second Semester Examinations begins on August 1st - August 12th 2024"],
+      "context": [""]
+    },
+    {
+      "tag": "library",
+      "patterns": [
+         "is there any library",
+         "library facility",
+         "library facilities",
+         "do you have library",
+         "does the college have library facility",
+         "college library",
+         "where can i get books",
+         "book facility",
+         "Where is library",
+         "Library",
+         "Library information",
+         "Library books information",
+         "Tell me about library",
+         "how many libraries"
+      ],
+      "responses": [
+         "TThe Bingham University Library was established in April 2006, with Pastor John O. Arosanyin as the University Librarian. Support primarily came from the Society for International Missions (SIM), facilitated by Mr. Howard Claassen and Dr. Jim Kraakevik.\n During Academic Semester the Library is open:\n Mondays to Fridays 8:30AM to 10: 00PM\n Saturdays 9:00AM to 4:00PM"
+      ],
+      "context_set": ""
+   },
+   {
+    "tag": "infrastructure",
+    "patterns": [
+       "how is college infrastructure",
+       "infrastructure",
+       "college infrastructure"
+    ],
+    "responses": [
+       "Our University has Excellent Infrastructure. Campus is clean. Good IT Labs With Good Speed of Internet connection"
+    ],
+    "context_set": ""
+ },
+ {
+  "tag": "canteen",
+  "patterns": [
+     "food facilities",
+     "canteen facilities",
+     "canteen facility",
+     "is there any canteen",
+     "Is there a cafetaria in college",
+     "Does college have canteen",
+     "Where is canteen",
+     "where is cafetaria",
+     "canteen",
+     "Food",
+     "Cafetaria"
+  ],
+  "responses": [
+     "Our university has canteen with variety of food available"
+  ],
+  "context_set": ""
+},
+{
+  "tag": "basicmedicalhod",
+  "patterns": [
+     "Who is basic medical HOD",
+     "Where is basic medical HOD",
+     "medical hod",
+     "name of medical hod"
+  ],
+  "responses": [
+     "The HOD of Basic Medical Sciences is Dr. Nuhu Adeh"
+  ],
+  "context_set": ""
+},
+{
+  "tag": "pharmacyhod",
+  "patterns": [
+     "Who is  pharmacy HOD",
+     "Where is pharmacy HOD",
+     "pharmacy hod",
+     "name of pharmacy hod"
+  ],
+  "responses": [
+     "All pharmacy departments have only one HOD Prof. Modupe Builders"
+  ],
+  "context_set": ""
+},
+{
+  "tag": "pharmacyacademicprogram",
+  "patterns": [
+     "What is the academic program for pharmacy",
+     "pharmacy program",
+     "study pharmacy"
+  ],
+  "responses": [
+     "The faculty currently offers a Bachelor of Pharmacy (B.Pharm) degree program in accordance with the Benchmark Minimum Academic Standard (BMAS) of the National Universities Commission (NUC) and Pharmacy Council of Nigeria (PCN). The program started in the 2017/2018 academic session with 56 pioneer students admitted through the UTME."
+  ],
+  "context_set": ""
+},
+{
+  "tag": "pharmacygraduationrequirements",
+  "patterns": [
+     "What is the requirement for graduation in pharmacy",
+     "what score do i need to graduate in pharmacy",
+     "graduate pharmacy"
+  ],
+  "responses": [
+     "Each student must successfully complete all the courses specified by NUC as core and cognate courses, as well as all the courses required by the Pharmacy Council of Nigeria. Additionally, a minimum CGPA of 2.50 is required at the end of the study."
+  ],
+  "context_set": ""
+},
+{
+  "tag": "pharmacyadmissionrequirements",
+  "patterns": [
+     "What is the requirement for admission in pharmacy",
+     "what do i need to be admitted in pharmacy",
+     "admission pharmacy",
+     "admit pharmacy"
+  ],
+  "responses": [
+    "A credit pass in Mathematics, English, Biology, Chemistry, and Physics\tStudents with G.C.E. or H.S.E. in Biology, Chemistry, and Physics"
+  ],
+  "context_set": ""
+},
+{
+  "tag": "artsacademicprogram",
+  "patterns": [
+     "What is the academic program for arts",
+     "arts program",
+     "study arts"
+  ],
+  "responses": [
+     "Duration: Four (4) years or eight (8) semesters"
+  ],
+  "context_set": ""
+},
+{
+  "tag": "artadmissionrequirements",
+  "patterns": [
+     "What is the requirement for admission in arts",
+     "what do i need to be admitted in arts",
+     "admission arts",
+     "admit arts"
+  ],
+  "responses": [
+    "For admission into Bachelor of Arts programme, candidates are required to possess either (a) or (b) below, or equivalent qualification.\n (a) An acceptable pass in UTME (University and Tertiary Matriculation Examination) subjects, which includes Government, History, Christian Religious Knowledge, Literature in English, Economics and Geography. In addition, candidates must have O’ level credit pass in English Language, two Arts subjects and any other two (2) subjects. A credit in Mathematics is also required.\n(b) Pass in A’ level including Government or History. In addition, candidates must have a minimum of 5 O’ level credits, including English Language and Two (2) Arts subjects. Candidates considered for admission under this category are admitted into 200 level."
+  ],
+  "context_set": ""
+},
+
+{
+  "tag": "hod",
+  "patterns": [
+     "hod",
+     "hod name",
+     "who is the hod"
+  ],
+  "responses": [
+     "HODs differ for each branch, please be more specific like: (HOD it)"
+  ],
+  "context_set": ""
+},
+{
+  "tag": "random",
+  "patterns": [
+     "I love you",
+     "Will you marry me",
+     "Do you love me"
+  ],
+  "responses": [
+     "I am not program for this, please ask appropriate query"
+  ],
+  "context_set": ""
+},
+{
+  "tag": "swear",
+  "patterns": [
+     "fuck",
+     "bitch",
+     "shut up",
+     "hell",
+     "stupid",
+     "idiot",
+     "dumb ass",
+     "asshole",
+     "fucker"
+  ],
+  "responses": [
+     "please use appropriate language",
+     "Maintaining decency would be appreciated"
+  ],
+  "context_set": ""
+}
+    ]
+  }
