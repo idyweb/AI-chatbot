@@ -3,7 +3,6 @@ gunicorn
 keras
 nltk
 numpy
-python-dotenv
 Requests
 tensorflow
 tensorflow_intel
