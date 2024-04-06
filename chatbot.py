@@ -16,6 +16,8 @@ lemmatizer = WordNetLemmatizer()
 
 # Download NLTK data
 nltk.download('punkt')
+nltk.download('wordnet')
+
 
 intents = json.loads(open('intents.json').read())
 words = pickle.load(open('words.pkl', 'rb'))
