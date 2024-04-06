@@ -74,6 +74,14 @@ def get_response(intents_list, intents_json):
 #     intents_list = predict_class(message)
 #     result = get_response(intents_list, intents)
 #     print(result)
+# def run_chatbot():
+#     print("Go! Bot is running!")
+
+#     while True:
+#         message = input("")
+#         intents_list = predict_class(message)
+#         result = get_response(intents_list, intents)
+#         print(result)
 def run_chatbot():
     print("Go! Bot is running!")
 
