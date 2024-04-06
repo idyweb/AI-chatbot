@@ -8,7 +8,6 @@ import requests
 from nltk.stem import WordNetLemmatizer
 from keras.models import load_model
 
-import openai
 from dotenv import load_dotenv
 
 load_dotenv()
