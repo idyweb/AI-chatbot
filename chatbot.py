@@ -58,12 +58,7 @@ def get_response(intents_list, intents_json):
     list_of_intents = intents_json['intents']
     for i in list_of_intents:
         if i['tag'] == tag:
-            if tag == 'bard_api_query':
-                response = requests.get('https://api.bard.com/endpoint')
-                data = response.json()
-                result = data['relevant_field']
-            else:
-                result = random.choice(i['responses'])
+            result = random.choice(i['responses'])
             break
     return result
 
@@ -74,23 +69,23 @@ def get_response(intents_list, intents_json):
 #     intents_list = predict_class(message)
 #     result = get_response(intents_list, intents)
 #     print(result)
-# def run_chatbot():
-#     print("Go! Bot is running!")
-
-#     while True:
-#         message = input("")
-#         intents_list = predict_class(message)
-#         result = get_response(intents_list, intents)
-#         print(result)
 def run_chatbot():
     print("Go! Bot is running!")
 
-    def chatbot_thread():
-        while True:
-            message = input("")
-            intents_list = predict_class(message)
-            result = get_response(intents_list, intents)
-            print(result)
+    while True:
+        message = input("")
+        intents_list = predict_class(message)
+        result = get_response(intents_list, intents)
+        print(result)
+# def run_chatbot():
+#     print("Go! Bot is running!")
 
-    # Start the chatbot in a separate thread
-    threading.Thread(target=chatbot_thread).start()
+#     def chatbot_thread():
+#         while True:
+#             message = input("")
+#             intents_list = predict_class(message)
+#             result = get_response(intents_list, intents)
+#             print(result)
+
+#     # Start the chatbot in a separate thread
+#     threading.Thread(target=chatbot_thread).start()
