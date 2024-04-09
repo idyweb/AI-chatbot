@@ -3,8 +3,7 @@ import json
 import pickle
 import numpy as np
 import nltk
-import requests
-import threading
+
 
 from nltk.stem import WordNetLemmatizer
 from keras.models import load_model
@@ -17,11 +16,11 @@ nltk.download('punkt')
 nltk.download('wordnet')
 
 
-intents = json.loads(open('intents.json').read())
-words = pickle.load(open('words.pkl', 'rb'))
-classes = pickle.load(open('classes.pkl', 'rb'))
+intents = json.loads(open('model/intents.json').read())
+words = pickle.load(open('model/words.pkl', 'rb'))
+classes = pickle.load(open('model/classes.pkl', 'rb'))
 
-model = load_model('chatbot_model.h5')
+model = load_model('model/chatbot_model.h5')
 
 def clean_up_sentence(sentence):
     sentence_words = nltk.word_tokenize(sentence)
