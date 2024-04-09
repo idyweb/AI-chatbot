@@ -66,21 +66,19 @@
         ]
       },
       {
-        "tag": "mission",
-        "patterns": ["What is the Mission and Vision of Bingham University?"],
-        "responses": ["Bingham University is a school that produce graduates that have both knowledge and skills for self-reliance in the fear of Christ Vision To be a World-Class Conventional University in a Christ-centered environment"],
+        "tag": "mission_vision",
+        "patterns": [
+          "What is the Mission and Vision of Bingham University?", "What is the Mission of Bingham University?", "What is the Vision of Bingham University?"
+        ],
+        "responses": [
+          "Mission:\n To produce graduates that have both knowledge and skills for self-reliance in the fear of Christ.\n\nVision: To be a World-Class Conventional University in a Christ-centered environment."
+        ],
         "context": [""]
       },
       {
         "tag": "location",
         "patterns": ["Where is Bingham University located?", "Can you tell me the location of Bingham University?", "What is the address of Bingham University?"],
         "responses": ["Bingham University is located in Karu, Nasarawa State, Nigeria.", "Bingham University is located in  Km 26 Abuja - Keffi Express Way Kodope, Nasarawa State"],
-        "context": [""]
-    },
-    {
-        "tag": "programs",
-        "patterns": ["What programs does Bingham University offer?", "Can you tell me about the courses at Bingham University?", "What can I study at Bingham University?"],
-        "responses": ["Bingham University offers a variety of programs in fields such as Medicine, Law, Arts, Sciences, and Social Sciences."],
         "context": [""]
     },
     {
@@ -188,12 +186,7 @@
         "responses": ["Bingham University offers a wide range of academic programs across various faculties:\n\nFaculty of Environmental Sciences:\n- B. Sc. Architecture\n- B. Sc. Landscape Architecture\n- B. Sc. Estate Management\n- B. Sc. Environmental Management\n- B. Sc. Quantity Surveying\n\nFaculty of Education:\n- B. Ed. Guidance and Counseling\n- B. Ed. Psychology\n\nFaculty of Arts:\n- B. A. Philosophy\n- B. A. Religious Studies\n- B. A. English and Literary Studies\n- B.A Theology\n\nFaculty of Administration:\n- B. Sc. Entrepreneurship\n- B.Sc. Accounting\n- B.Sc. Business Administration\n- B.Sc. Supply Chain Management\n- B.Sc. Procurement Management\n\nFaculty of Social Sciences:\n- B.Sc. Mass Communication\n- B.Sc. Economics\n- B.Sc. Political Science\n- B.Sc. Sociology\n- B.Sc. Library & Information Science\n\nFaculty of Law:\n- (LLB) Bachelor of Law\n\nFaculty of Science and Technology:\n- B.Sc. Industrial Chemistry\n- B.Sc. Physics\n- B.Sc. Computer Science\n- B.Sc. Biochemistry\n- B.Sc. Microbiology\n- B.Sc. Mathematics\n- BSc. Industrial Mathematics\n- B.Sc. Cyber Security\n- B.Sc. Information Technology\n\nFaculty of Pharmaceutical Sciences:\n- Bachelor of Pharmacy (B.Pharm)\n\nFaculty of Clinical Sciences:\n- MBBS, Medicine and Surgery\n- B. Sc. Public Health\n\nFaculty of Basic Medical Sciences:\n- B.Sc. Anatomy\n- B. Sc. Physiology\n\nFaculty of Allied Health Sciences:\n- B. NSc Nursing\n- Doctor of Optometry\n- Bachelor of Medical Laboratory Science\n- B.Sc. Radiography"],
         "context": [""]
       },
-      {
-        "tag": "about",
-        "patterns": ["What is the name of Bingham University?", "What is the acronym for Bingham University?", "When was Bingham University founded?"],
-        "responses": ["Bingham University, also known as BHU, was founded in 2005. and its colors are yellow."],
-        "context": [""]
-      },
+      
       {
         "tag": "motto",
         "patterns": ["What is the motto of Bingham University?"],
@@ -270,7 +263,7 @@
     {
       "tag": "first semester break",
       "patterns": ["When is first semester break?", "when are student to for first semester break?"],
-      "responses": ["First break of the 2023/2024 academic session is scheduled to commence on February 22nd 2024 - April 5th 2024."],
+      "responses": ["First  semester break of the 2023/2024 academic session is scheduled to commence on February 22nd 2024 - April 5th 2024."],
       "context": [""]
     },
     {
@@ -418,7 +411,7 @@
      "admit arts"
   ],
   "responses": [
-    "For admission into Bachelor of Arts programme, candidates are required to possess either (a) or (b) below, or equivalent qualification.\n (a) An acceptable pass in UTME (University and Tertiary Matriculation Examination) subjects, which includes Government, History, Christian Religious Knowledge, Literature in English, Economics and Geography. In addition, candidates must have O’ level credit pass in English Language, two Arts subjects and any other two (2) subjects. A credit in Mathematics is also required.\n(b) Pass in A’ level including Government or History. In addition, candidates must have a minimum of 5 O’ level credits, including English Language and Two (2) Arts subjects. Candidates considered for admission under this category are admitted into 200 level."
+    "For admission into Bachelor of Arts programme, candidates are required to possess either (a) or (b) below, or equivalent qualification.\n (a) An acceptable pass in UTME (University and Tertiary Matriculation Examination) subjects, which includes Government, History, Christian Religious Knowledge, Literature in English, Economics and Geography. In addition, candidates must have O’ level credit pass in English Language, two Arts subjects and any other two (2) subjects. A credit in Mathematics is also required.\n\n(b) Pass in A’ level including Government or History. In addition, candidates must have a minimum of 5 O’ level credits, including English Language and Two (2) Arts subjects. Candidates considered for admission under this category are admitted into 200 level."
   ],
   "context_set": ""
 },
@@ -465,6 +458,167 @@
      "Maintaining decency would be appreciated"
   ],
   "context_set": ""
+},
+{
+  "tag": "faculties",
+  "patterns": [
+    "How many faculties are there in Bingham University?",
+    "List of faculties at Bingham University",
+    "What are the faculties offered by Bingham University?"
+  ],
+  "responses": [
+    "Bingham University has a total of 15 faculties. Here is a composed list of them all:\n- Faculty of Basic Medical Sciences\n\n- Faculty of Allied Health Sciences\n\n- Faculty of Basic Clinical Sciences\n\n- Faculty of Clinical Sciences\n\n- Faculty of Pharmaceutical Sciences\n\n- Faculty of Science and Technology\n\n- Faculty of Computing Science\n\n- Faculty of Environmental Sciences\nn- Faculty of Architecture\n\n- Faculty of Administration\n\n- Faculty of Social Sciences\n\n- Faculty of Law\n\n- Faculty of Education\n\n- Faculty of Arts\n\n- Faculty Communication and Media Studies"
+  ],
+  "context": [""]
+},
+{
+  "tag": "departments",
+  "patterns": [
+    "How many departments are there in Bingham University?",
+    "List of departments at Bingham University",
+    "What are the departments offered by Bingham University?"
+  ],
+  "responses": [
+    "Bingham University has a total of 54 departments. Here is a composed list of them all:\n- Department of Morbid Anatomy\n\n- Department of Medical Microbiology and Parasitology\n\n- Department of Haematology and Blood Transfusion\n\n- Department of Pharmacology & Therapeutics\n\n- Department of Chemical Pathology\n\n- Department of Surgery\n\n- Department of Obstetrics & Gynaecology\n\n- Department of Community Medicine & Primary Health Care\n\n- Department of Internal Medicine\n\n- Department of Paediatrics\n\n- Department of Radiology\n\n- Department of Family Medicine\n\n- Department of Psychiatry\n\n- Department of Anatomy\n\n- Department of Physiology\n\n- Department of Biochemistry\n\n- Department of Nursing\n\n- Department of Optometry\n\n- Department of Radiography and Radiological Sciences\n\n- Department of Medical Laboratory Science\n\n- Department of Pharmaceutics and Pharmaceutical Technology\n\n- Department of Pharmacology and Toxicology\n\n- Department of Pharmacognosy\n\n- Department of Pharmaceutical and Medicinal Chemistry\n\n- Department of Pharmaceutical Microbiology\n\n- Department of Clinical Pharmacy and Pharmacy Practice\n\n- Department of Private and Public Law\n\n- Department of International Law\n\n- Department of Chemical Sciences\n\n- Department of Biological Sciences\n\n- Department of Computer Science\n\n- Department of Cyber Security\n\n- Department of Information Technology\n\n- Department of Physics\n\n- Department of Mathematics\n\n- Department of Architecture\n\n- Department of Landscape Architecture\n\n- Department of Quantity Surveying\n\n- Department of Landscape Architecture\n\n- Department of Estate Management\n\n- Department of Environmental Management\n\n- Department of Mass Communication\n\n- Department of Sociology\n\n- Department of Political Science\n\n- Department of Economics\n\n- Department of Library and Information Science\n\n- Department of Accounting\n\n- Department of Business Administration\n\n- Department of Entrepreneurship\n\n- Department of English\n\n- Department of Philosophy\n\n- Department of Religious Studies\n\n- Department of Guidance and Counseling\n\n- Department of Psychology"
+  ],
+  "context": [""]
+},
+{
+  "tag": "phone_policy",
+  "patterns": [
+    "Are phones allowed in Bingham University?",
+    "Can students use phones on campus at Bingham University?",
+    "What is the phone policy at Bingham University?"
+  ],
+  "responses": [
+    "Bingham University has banned its students from using smartphones on campus."
+  ],
+  "context": [""]
+},
+{
+  "tag": "dress_code",
+  "patterns": [
+    "Are trousers allowed in Bingham University?",
+    "What is the dress code at Bingham University?"
+  ],
+  "responses": [
+    "Bingham University typically follows a modest dress code. While specific guidelines may vary, trousers are generally acceptable attire for both men and women on campus."
+  ],
+  "context": [""]
+},
+{
+  "tag": "cooking_policy",
+  "patterns": [
+    "Is cooking allowed in Bingham University?",
+    "What are the cooking regulations at Bingham University?"
+  ],
+  "responses": [
+    "Undergraduates in private universities, including Bingham University, may face suspension if caught cooking in their hostels or possessing cooking utensils."
+  ],
+  "context": [""]
+},
+{
+  "tag": "ownership",
+  "patterns": [
+    "Which church owns Bingham University?",
+    "Who established Bingham University?"
+  ],
+  "responses": [
+    "Bingham University is owned and established by the Evangelical Church Winning All (ECWA), making it the only private university in the north of Nigeria established by a Christian organization."
+  ],
+  "context": [""]
+},
+{
+  "tag": "jamb_requirement",
+  "patterns": [
+    "Does Bingham University require JAMB?",
+    "Is JAMB necessary for admission to Bingham University?"
+  ],
+  "responses": [
+    "For Direct Entry admission into Bingham University, candidates are required to have completed the JAMB Direct Entry form and obtained relevant O/Level Credits, including Mathematics and English, at not more than two sittings. Additionally, an A/Level result (such as IJMB, National Diploma with a minimum of Lower Credit, and Cambridge A/Levels result) is required."
+  ],
+  "context": [""]
+},
+{
+  "tag": "second_choice",
+  "patterns": [
+    "Does Bingham University accept second choice candidates?",
+    "Can I apply to Bingham University if I didn't select it as my first choice?"
+  ],
+  "responses": [
+    "Candidates who did not initially select Bingham University as one of their choices in the UTME are still eligible to apply. However, they must change their choice of institution to Bingham University through JAMB in order to be considered for admission."
+  ],
+  "context": [""]
+},
+{
+  "tag": "student_population",
+  "patterns": [
+    "How many students are enrolled at Bingham University?",
+    "What is the student population at Bingham University?"
+  ],
+  "responses": [
+    "As of now, Bingham University has a current population of over 7,000 undergraduates and 2,000 postgraduates."
+  ],
+  "context": [""]
+},
+{
+  "tag": "nursing_program",
+  "patterns": [
+    "Does Bingham University offer a nursing program?",
+    "Is nursing offered at Bingham University?"
+  ],
+  "responses": [
+    "Yes, Bingham University offers a nursing program. Recently, the university celebrated its second nursing induction ceremony, welcoming 67 new graduates into the healthcare profession. This marks the university's largest class of nurses yet, contributing valuable manpower to the nation's healthcare sector."
+  ],
+  "context": [""]
+},
+{
+  "tag": "accreditation_nuc",
+  "patterns": [
+    "Is Bingham University accredited by NUC?",
+    "Are Bingham University's programs accredited?"
+  ],
+  "responses": [
+    "Yes, Bingham University's programs are accredited by the National Universities Commission (NUC). Recently, the university secured NUC accreditation for all its programs, ensuring the quality and recognition of its educational offerings."
+  ],
+  "context": [""]
+},
+{
+  "tag": "rules_academic_integrity",
+  "patterns": [
+    "What is not allowed in Bingham University?",
+    "What are the rules regarding academic integrity at Bingham University?"
+  ],
+  "responses": [
+    "Academic honesty is paramount at Bingham University. Any form of cheating, plagiarism, or academic dishonesty is strictly prohibited and can result in severe penalties. It's important for students to uphold the principles of integrity and honesty in their academic pursuits."
+  ],
+  "context": [""]
+},
+{
+  "tag": "ComputerScienceCourses400Level",
+  "patterns": [
+    "list of computer science courses for 400 level",
+        "courses offered for 400 level computer science students",
+        "computer science courses at 400 level",
+        "400 level computer science courses"
+  ],
+  "responses": [
+    "Below is a list of courses offered by 400 level computer science students with the course code, course title, and credit units for each course:\n\n| S/No | Course Code | Course Title | Course Units |\n\n| 1 | CMP409 | ARTIFICIAL INTELLIGENCE | 2 |\n\n| 2 | CMP407 | COMPILER CONSTRUCTION | 2 |\n\n| 3 | CMP405 | COMPUTER GRAPHICS | 2 |\n\n| 4 | CMP403 | SOFTWARE ENGINEERING | 2 |\n\n| 5 | CMP411 | SYSTEM MODELLING AND SIMULATION | 2 |\n\n| 6 | CMP401 | ORGANIZATION OF PROGRAMMING LANGUAGES | 3 |\n\n| 7 | CMP421 | Net-Centric Computing | 2 |\n\n| 8 | CMP441 | Human Computer Interaction | 3 |"
+  ],
+  "context": [""]
+},
+{
+  "tag":"deanfacultyofscienceandtechnology",
+  "patterns": [
+    "Who is the Dean of the Faculty of Science and Technology?",
+    "Dean of the Faculty of Science and Technology",
+    "Dean of Science and Technology"
+  ],
+  "responses": [
+    "The Dean of the Faculty of Science and Technology at Bingham University is Dr (Mrs.) U. D. Ejike."
+  ],
+  "context": [""]
 }
+
     ]
   }
