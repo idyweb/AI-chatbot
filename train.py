@@ -9,7 +9,7 @@ from nltk.stem import WordNetLemmatizer
 
 lemmatizer = WordNetLemmatizer()
 
-intents = json.loads(open('intents.json').read())
+intents = json.loads(open('model/intents.json').read())
 
 words = []
 classes = []
@@ -29,8 +29,8 @@ words = sorted(set(words))
 
 classes = sorted(set(classes))
 
-pickle.dump(words, open('words.pkl', 'wb'))
-pickle.dump(classes, open('classes.pkl', 'wb'))
+pickle.dump(words, open('model/words.pkl', 'wb'))
+pickle.dump(classes, open('model/classes.pkl', 'wb'))
 
 training = []
 outputEmpty = [0] * len(classes)
@@ -64,7 +64,7 @@ sgd = tf.keras.optimizers.SGD(learning_rate=0.01, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
 hist = model.fit(np.array(trainX), np.array(trainY), epochs=100, batch_size=5, verbose=1)
-model.save('chatbot_model.h5', hist)
+model.save('model/chatbot_model.h5', hist)
 print('Done')
 
 

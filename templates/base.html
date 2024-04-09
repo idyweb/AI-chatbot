@@ -1,12 +1,990 @@
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="apple-touch-icon" sizes="180x180" href="https://binghamuni.edu.ng/v2/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://binghamuni.edu.ng/v2/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://binghamuni.edu.ng/v2/favicon/favicon-16x16.png">
+<link rel="manifest" href="https://binghamuni.edu.ng/v2/favicon/site.webmanifest">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Chatbot</title>
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.binghamuni.edu.ng/">
+<meta property="og:title" content="Bingham University">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://www.binghamuni.edu.ng/images/binghamuni.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://www.binghamuni.edu.ng/">
+<meta property="twitter:title" content="Bingham University">
+<meta property="twitter:description" content="">
+<meta property="twitter:image" content="https://www.binghamuni.edu.ng/images/binghamuni.jpg">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+
+<link href="https://binghamuni.edu.ng/v2/css/guest.css" rel="stylesheet">
+        <style>
+        /* Add this CSS to your stylesheet */
+        @media (max-width: 767px) {
+
+            /* Apply styles for screens up to 767px wide (typically mobile devices) */
+            .carousel-inner img {
+                height: 300px;
+                /* Set the image height to 300px on mobile */
+            }
+
+            #caption {
+                font-size: 20px !important;
+                font-weight: normal;
+            }
+        }
+
+        .card-container {
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .new {
+            display: inline-block;
+            width: 300px;
+            margin-bottom: 10px;
+            /* Adjust the width based on your card design */
+            margin-right: 15px;
+        }
+    </style>
+    <link href="https://binghamuni.edu.ng/v2/css/styles.css" rel="stylesheet">
+
+<style >[wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid], [wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short], [wire\:loading\.delay\.long], [wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest] {display:none;}[wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {animation-duration: 50000s;animation-name: livewireautofill;}@keyframes livewireautofill { from {} }</style>
+
 </head>
+
 <body>
+<!-- Loader -->
+<div id="preloader">
+<div id="status">
+    <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+</div>
+</div>
+<!-- Loader -->
+
+<div class="top-bar bg-primary">
+<div class="container">
+    <div class="d-flex justify-content-between">
+        <div class="d-flex">
+            <a href="https://binghamuni.edu.ng/v2/student-resource" class="nav-link">Students</a>
+            <a href="https://binghamuni.edu.ng/v2/staff-resource" class="nav-link">Staff</a>
+            <a href="https://binghamuni.edu.ng/v2/alumni" class="nav-link">Alumni</a>
+            
+        </div>
+        <div class="d-flex">
+            <a href="#" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                title="Calendar &amp; Events">
+                <svg style="width:16px; height:16px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>                </a>
+            <a href="https://binghamuni.edu.ng/v2/staff" class="nav-link d-flex align-items-center" data-bs-toggle="tooltip"
+                data-bs-placement="bottom" title="Staff Directory">
+                
+                <span class="d-none d-lg-block">Staff Directory</span>
+            </a>
+            
+        </div>
+    </div>
+</div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+<div class="container">
+    <a class="navbar-brand" href="https://binghamuni.edu.ng/v2">
+        <img src="https://binghamuni.edu.ng/v2/images/logo.png" alt="" width="200">
+    </a>
+    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content">
+        <div class="hamburger-toggle">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbar-content">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown mega-menu">
+                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                    data-bs-auto-close="outside">About Us</a>
+                <div class="dropdown-menu border-0 py-0 shadow">
+                    <div class="mega-menu-content">
+                        <div class="container-fluid p-0">
+                            <div class="row g-0">
+                                <div class="col-12 col-sm-4 col-md-3">
+                                    <div class="card border-0">
+                                        <img class="card-img" src="https://binghamuni.edu.ng/v2/images/admin.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4 col-md-3">
+                                    <div class="px-4 py-3">
+                                        <h6 class="text-uppercase">About Bingham</h6>
+                                        <a href="https://binghamuni.edu.ng/v2/about" class="px-2">The
+                                            University</a>
+                                        <a href="https://binghamuni.edu.ng/v2/mission-vision" class="px-2">Mission &amp;
+                                            Vision</a>
+                                        <a href="https://binghamuni.edu.ng/v2/uploads/strategic-plan-2019-2034.pdf" class="px-2"
+                                            download>Strategic Plan</a>
+                                        <a href="https://binghamuni.edu.ng/v2/projects" class="px-2">Projects</a>
+                                        <a href="https://binghamuni.edu.ng/v2/linkages" class="px-2">Linkages</a>
+                                        <a href="https://binghamuni.edu.ng/v2/staff" class="px-2">Staff Directory</a>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4 col-md-3">
+                                    <div class="px-4 py-3">
+                                        <h6 class="text-uppercase">The Management</h6>
+                                        <a href="https://binghamuni.edu.ng/v2/principal-officers" class="px-2">Principal
+                                            Officers</a>
+                                        <a href="https://binghamuni.edu.ng/v2/board-of-trustees" class="px-2">Board of
+                                            Trustees</a>
+                                        <a href="https://binghamuni.edu.ng/v2/governing-council" class="px-2">Governing
+                                            Council</a>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4 col-md-3">
+                                    <div class="px-4 py-3">
+                                        <h6 class="text-uppercase">Support Units</h6>
+                                        <a href="https://binghamuni.edu.ng/v2/planning" class="px-2">Academic
+                                            Planning</a>
+                                        <a href="#" class="px-2">Phyical Planning &amp;
+                                            Dev.</a>
+                                        <a href="#" class="px-2">Student Affairs
+                                            Division</a>
+                                        <a href="#" class="px-2">Security Division</a>
+                                        <a href="#" class="px-2">University Advancement</a>
+                                        <a href="#" class="px-2">University Helath
+                                            Services</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown mega-menu">
+                <a href="#" class="nav-link dropdown-toggle" role="button"
+                    data-bs-toggle="dropdown">Administration</a>
+                <div class="dropdown-menu border-0 py-0 shadow">
+                    <div class="mega-menu-content">
+                        <div class="container-fluid p-0">
+                            <div class="row g-0">
+                                <div class="col-md-3">
+                                    <div class="card border-0">
+                                        <img src="https://binghamuni.edu.ng/v2/images/academic.jpg" alt=""
+                                            class="card-img">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="px-4 py-3">
+                                        <h6 class="text-uppercase">Central Administration</h6>
+                                        <a href="https://binghamuni.edu.ng/v2/vc">The Chancellor</a>
+                                        <a href="#">Vice-Chancellor</a>
+                                        <a href="#">Deputy Vice-Chancellor</a>
+                                        <a href="#">Registrar</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="px-4 py-3">
+                                        <h6 class="text-uppercase">Directorates &amp; Units</h6>
+                                        <a href="https://binghamuni.edu.ng/v2/consultancy">Consultancy Services</a>
+                                        <a href="#">Guidance &amp; Counseling</a>
+                                        <a href="https://binghamuni.edu.ng/v2/public-affairs">Directorate of Public
+                                            Affairs</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="px-4 py-3">
+                                        <h6 class="text-uppercase">Centers</h6>
+                                        <a href="https://binghamuni.edu.ng/v2/edc">ERDC</a>
+                                        <a href="https://binghamuni.edu.ng/v2/ict">ICT</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown mega-menu">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Academic</a>
+                <div class="dropdown-menu border-0 py-0shadow">
+                    <div class="mega-menu-content">
+                        <div class="container-fluid p-0">
+                            <div class="row g-0">
+                                <div class="col-md-3">
+                                    <div class="card border-0 p-0">
+                                        <img src="https://binghamuni.edu.ng/v2/images/academic.jpg" alt=""
+                                            class="card-img">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="px-4 py-3">
+                                        <h6 class="text-uppercase">Faculties</h6>
+                                                                                        <a href="https://binghamuni.edu.ng/v2/faculties/administration">
+                                                Administration
+                                            </a>
+                                                                                        <a href="https://binghamuni.edu.ng/v2/faculties/allied-health-sciences">
+                                                Allied Health Sciences
+                                            </a>
+                                                                                        <a href="https://binghamuni.edu.ng/v2/faculties/arts">
+                                                Arts
+                                            </a>
+                                                                                        <a href="https://binghamuni.edu.ng/v2/faculties/basic-clinical-sciences">
+                                                Basic Clinical Sciences
+                                            </a>
+                                                                                        <a href="https://binghamuni.edu.ng/v2/faculties/basic-medical-sciences">
+                                                Basic Medical Sciences
+                                            </a>
+                                                                                        <a href="https://binghamuni.edu.ng/v2/faculties/clinical-sciences">
+                                                Clinical Sciences
+                                            </a>
+                                                                                        <a href="https://binghamuni.edu.ng/v2/faculties/education">
+                                                Education
+                                            </a>
+                                                                                        <a href="https://binghamuni.edu.ng/v2/faculties/environmental-science">
+                                                Environmental Science
+                                            </a>
+                                                                                        <a href="https://binghamuni.edu.ng/v2/faculties/law">
+                                                Law
+                                            </a>
+                                                                                        <a href="https://binghamuni.edu.ng/v2/faculties/pharmaceutical-sciences">
+                                                Pharmaceutical Sciences
+                                            </a>
+                                                                                        <a href="https://binghamuni.edu.ng/v2/faculties/science-and-technology">
+                                                Science And Technology
+                                            </a>
+                                                                                        <a href="https://binghamuni.edu.ng/v2/faculties/social-and-management-sciences">
+                                                Social And Management Sciences
+                                            </a>
+                                                                                </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="px-4 py-3">
+                                        <h6 class="text-uppercase">Colleges</h6>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="px-4 py-3">
+                                        <h6 class="text-uppercase">Planning</h6>
+                                        <a href="https://binghamuni.edu.ng/v2/planning">Academic Planning</a>
+                                        <a href="https://binghamuni.edu.ng/v2/academic-calendar">Academic Calendar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown mega-menu">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Admission</a>
+                <div class="dropdown-menu border-0 py-0 shadow">
+                    <div class="mega-menu-content">
+                        <div class="container-fluid p-0">
+                            <div class="row g-0">
+                                <div class="col-md-3">
+                                    <div class="card border-0 p-0">
+                                        <img class="card-img" src="https://binghamuni.edu.ng/v2/images/admission.jpg"
+                                            alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class=" py-3 px-4">
+                                        <h6 class="text-uppercase">Programs</h6>
+                                        <a href="https://binghamuni.edu.ng/pre" class="px-2">Pre-degree</a>
+                                        <a href="https://binghamuni.edu.ng/admission"
+                                            class="px-2">Undergraduate</a>
+                                        <a href="https://pgadmission.binghamuni.edu.ng"
+                                            class="px-2">Postgraduate</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="px-4 py-3">
+                                        <h6 class="text-uppercase">Fees &amp; Scholarships</h6>
+                                        <a href="https://binghamuni.edu.ng/v2/schedule-of-fees" class="px-2">Schedule of
+                                            Fees</a>
+                                        <a href="https://binghamuni.edu.ng/v2/part-time-fees" class="px-2">Part-time
+                                            Fees</a>
+                                        <a href="https://binghamuni.edu.ng/v2/scholarships" class="px-2">Available
+                                            Scholarships</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="px-4 py-3">
+                                        <h6 class="text-uppercase">Life at Bingham</h6>
+                                        <a href="#" class="px-2">Sports</a>
+                                        <a href="#" class="px-2">Cafteria</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown mega-menu">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Research</a>
+                <div class="dropdown-menu shadow">
+                    <div class="mega-menu-content">
+                        <div class="container-fluid p-0">
+                            <div class="row g-0">
+                                <div class="col-12 col-sm-4 col-md-3">
+                                    <div class="card">
+                                        <img src="https://binghamuni.edu.ng/v2/images/research.jpg" alt=""
+                                            class="card-img">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4 col-md-3">
+                                    <div class="px-4 py-3">
+                                        <h6 class="text-uppercase">Research</h6>
+                                        <a href="https://binghamuni.edu.ng/v2/uploads/research_policy.pdf"
+                                            class="dropdown-item" download>Research Policy</a>
+                                        <a href="https://journal.binghamuni.edu.ng" target="_blank"
+                                            class="dropdown-item">Academic Journals</a>
+                                        <a href="#">Publications</a>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4 col-md-3">
+                                    <div class="px-4 py-3">
+                                        <h6 class="text-uppercase">Resources</h6>
+                                        <a href="http://binghamuni.edu.ng/library" target="_blank">
+                                            Library
+                                        </a>
+                                        <a href="http://binghamuni.edu.ng/library/index.php/repository"
+                                            target="_blank">
+                                            Repository
+                                        </a>
+                                        <a href="https://moodle.binghamuni.edu.ng/" target="_blank">
+                                            E-Learning
+                                        </a>
+                                        <a href="#" class="">OER</a>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-4 col-md-3">
+                                    <div class="px-4 py-3">
+                                        <h6 class="text-uppercase">Research Centre</h6>
+                                        <a href="https://zankli.binghamuni.edu.ng" target="_blank">Zankli Research
+                                            Centre</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a href="http://binghamuni.edu.ng/library" target="_blank" class="nav-link">Library</a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">News & Media</a>
+                <ul class="dropdown-menu border-0 shadow">
+                    <li><a href="https://binghamuni.edu.ng/v2/posts" class="dropdown-item px-2">University News</a></li>
+                    <li><a href="https://binghamuni.edu.ng/v2/bulletins" class="dropdown-item px-2">University
+                            Bulletin</a>
+                    </li>
+                    <li><a href="https://binghamuni.edu.ng/v2/photos" class="dropdown-item px-2">Photo
+                            Gallery</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a href="https://binghamuni.edu.ng/v2/contact" class="nav-link">Contact</a>
+            </li>
+        </ul>
+    </div>
+</div>
+</nav>
+
+
+<main class="py-4">
+    
+    <section class="slider container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                aria-label="Slide 4"></button>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://binghamuni.edu.ng/v2/images/slides/slider5.jpeg" class="d-block" alt="Slide 1" width="100%"
+                    height="600">
+                <div class="carousel-caption" style="text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);">
+                    <p id="caption"
+                        style="color:#263B80; font-size: 28px; font-weight: bold; margin-bottom: 10px;">
+                        University with a difference</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://binghamuni.edu.ng/v2/images/slides/slider4.jpeg" class="d-block" alt="Slide 2" width="100%"
+                    height="600">
+                <div class="carousel-caption" style="text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);">
+                    <p id="caption"
+                        style="color:#263B80; font-size: 28px; font-weight: bold; margin-bottom: 10px;">
+                        Serene Study Environment</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://binghamuni.edu.ng/v2/images/slides/slider8.jpeg" class="d-block" alt="Slide 3" width="100%"
+                    height="600">
+                <div class="carousel-caption" style="text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);">
+                    <p id="caption"
+                        style="color:#263B80; font-size: 28px; font-weight: bold; margin-bottom: 10px;">
+                        Outgone VC, Prof W.B. Qurix hands over to New VC, Prof. H.K. Ayuba</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://binghamuni.edu.ng/v2/images/slides/slider9.jpeg" class="d-block" alt="Slide 4" width="100%"
+                    height="600">
+                <div class="carousel-caption" style="text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);">
+                    <p id="caption"
+                        style="color:#263B80; font-size: 28px; font-weight: bold; margin-bottom: 10px;">
+                        University Top staff with former VC and the new VC</p>
+                </div>
+            </div>
+        </div>
+
+
+        <button type="button" class="carousel-control-prev" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button type="button" class="carousel-control-next" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
+<section class="container">
+    <div class="events">
+        <div class="events_inner">
+            <div class="events_innermost">
+                <!-- 
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                 -->
+                <a href="#" class="event">
+                    <span class="image" style="background-image: url(https://binghamuni.edu.ng/v2/images/events/default.jpg)">
+                    </span>
+                    <span class="event_date">
+                        <span class="month">SEPT.</span>
+                        <span class="date">18</span>
+                    </span>
+                    <span class="details">
+                        <span class="title">2023/2024 Session Begins</span>
+                        <span class="time">80:00 am</span>
+                        <span class="seemore">Details</span>
+                    </span>
+                </a>
+                <a href="#" class="event">
+                    <span class="image" style="background-image: url(https://binghamuni.edu.ng/v2/images/events/default.jpg)">
+                    </span>
+                    <span class="event_date">
+                        <span class="month">FEB.</span>
+                        <span class="date" style="margin-left:-50px!important;">12</span>
+                    </span>
+                    <span class="details">
+                        <span class="title">1st Semester Exam begins</span>
+                        <span class="time">8:00 am</span>
+                        <span class="seemore">Details</span>
+                    </span>
+                </a>
+                <a href="#" class="event">
+                    <span class="image" style="background-image: url(https://binghamuni.edu.ng/v2/images/events/default.jpg)">
+                    </span>
+                    <span class="event_date">
+                        <span class="month">MARCH</span>
+                        <span class="date" style="margin-left:-50px!important;">19</span>
+                    </span>
+                    <span class="details">
+                        <span class="title">Senate sits</span>
+                        <span class="time">8:00 am</span>
+                        <span class="seemore">Details</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <div class="anouncements">
+        <div class="d-md-flex align-items-center">
+            <div class="bg-primary p-3 md-mb-0">
+                <p class="text-white mb-0">Announcements:</p>
+            </div>
+
+            <div class="flex-grow-1 p-3">
+                <div class="announcement">
+                                                <a href="https://binghamuni.edu.ng/v2/announcements/PGD-CROWD-CONTROL-&amp;-MANAGEMENT-AND-PGD-INFECTIOUS-DISEASE-CONTROL-PROGRAMMES-FOR-THE-2023-2024-ACADEMIC-SESSION">
+                            PGD CROWD CONTROL &amp; MANAGEMENT AND PGD INFECTIOUS DISEASE CONTROL PROGRAMMES FOR THE 2023/2024 ACADEMIC SESSION
+                        </a>
+                                                <a href="https://binghamuni.edu.ng/v2/announcements/POSTGRADUATE-SCHOOL-ADMISSION-FOR-THE-2023-2024-ACADEMIC-SESSION-FINAL-ADVERT">
+                            POSTGRADUATE SCHOOL ADMISSION FOR THE 2023/2024 ACADEMIC SESSION FINAL ADVERT
+                        </a>
+                                                <a href="https://binghamuni.edu.ng/v2/announcements/POSTGRADUATE-SCHOOL-ADMISSION-FOR-THE-2023-2024-ACADEMIC-SESSION">
+                            POSTGRADUATE SCHOOL ADMISSION FOR THE 2023/2024 ACADEMIC SESSION
+                        </a>
+                                                <a href="https://binghamuni.edu.ng/v2/announcements/PART-TIME-UNDERGRADUATE-ADMISSION-FOR-THE-2023-2024-ACADEMIC-SESSION">
+                            PART-TIME UNDERGRADUATE ADMISSION FOR THE 2023/2024 ACADEMIC SESSION
+                        </a>
+                                                <a href="https://binghamuni.edu.ng/v2/announcements/UNDERGRADUATE-ADMISSION-FOR-2023-2024-ACADEMIC-SESSION">
+                            UNDERGRADUATE ADMISSION FOR 2023/2024 ACADEMIC SESSION
+                        </a>
+                                        </div>
+            </div>
+
+            <div class="btn-group d-none d-md-flex" id="customize-controls">
+                <button id="prev" class="btn prevButton p-0 outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg>                    </button>
+                <button id="next" class="btn nextButton p-0 outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>                    </button>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container mt-100 mt-60">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="images/senate.jpeg" class="rounded img-fluid mx-auto d-block" alt="">
+            </div>
+            <!--end col-->
+
+            <div class="col-md-6">
+                <div class="section-title ms-lg-4 mt-2">
+                    <h6>About us</h6>
+                    
+                    <p class="text-muted text-justify" style="text-align: justify">
+                        In a bid to contribute its quota to the Nigerian University space fueled by
+                        the ruins of public universities in the Nation, Bingham University located
+                        in Karu, 26 kilometres away from the Federal Capital city of Nigeria,
+                        Abuja was founded in 2005 by the Evangelical Church Winning All (ECWA).
+                        The founders had as a goal, the revitalization of the golden age of high
+                        quality and morally sound mission education up to the tertiary level.
+                        ECWA leaders and academics of ECWA extraction saw the need to establish
+                        a University that will provide a secular education anchored on sound moral
+                        values as provided for by the Christian faith. Recognizing the importance
+                        of the technological revolution of the 19th and 20th centuries, Bingham
+                        University is determined to build a technology-driven institution of the
+                        21st century.
+                    </p>
+                    <p class="text-muted text-justify">
+                        As a means of promoting self-reliance among graduates, the University focuses
+                        on entrepreneurial backed education. The University currently runs a total
+                        of 64 undergraduate and postgraduate programmes spread across 12 faculties
+                    </p>
+                    <a href="https://binghamuni.edu.ng/v2/about" class="btn btn-primary mt-3">
+                        Read More
+                        <svg style="width: 14px; height:14px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>                        </a>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+<section class="bg-white" style="min-height: 400px;">
+    <div class="container">
+        <div class="card border-0 text-center"
+            style="background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); padding: 30px; margin-bottom: 30px;">
+            <h1 class="mb-5" style="font-size: 36px; font-weight: bold; margin-bottom: 50px;">THE UNIVERSITY AT
+                A GLANCE</h1>
+            <a href="https://binghamuni.edu.ng/v2/university-details">
+                <div class="container mt-5">
+                    <div id="cardCarousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="card-container">
+                                    <div class="card new"
+                                        style="background-color: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); padding: 30px;">
+                                        <h2 class="pt-5 pb-2"
+                                            style="font-size: 48px; font-weight: bold; margin-bottom: 10px;">15
+                                        </h2>
+                                        <h3 style="font-size: 18px; font-weight: bold; margin-top: 10px;">FACULTIES
+                                        </h3>
+                                    </div>
+                                    <div class="card new"
+                                        style="background-color: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); padding: 30px;">
+                                        <h2 class="pt-5 pb-2"
+                                            style="font-size: 48px; font-weight: bold; margin-bottom: 10px;">51
+                                        </h2>
+                                        <h3 style="font-size: 18px; font-weight: bold; margin-top: 10px;">
+                                            DEPARTMENTS</h3>
+                                    </div>
+                                    <div class="card new"
+                                        style="background-color: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); padding: 30px;">
+                                        <h2 class="pt-5 pb-2"
+                                            style="font-size: 48px; font-weight: bold; margin-bottom: 10px;">80
+                                        </h2>
+                                        <h3 style="font-size: 18px; font-weight: bold; margin-top: 10px;">
+                                            PROGRAMMES</h3>
+                                    </div>
+                                    <div class="card new"
+                                        style="background-color: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); padding: 30px;">
+                                        <h2 class="pt-5 pb-2"
+                                            style="font-size: 48px; font-weight: bold; margin-bottom: 10px;">7000+
+                                        </h2>
+                                        <h3 style="font-size: 18px; font-weight: bold; margin-top: 10px;">
+                                            UNDERGRADUATE STUDENTS</h3>
+                                    </div>
+                                    <div class="card new"
+                                        style="background-color: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); padding: 30px;">
+                                        <h2 class="pt-5 pb-2"
+                                            style="font-size: 48px; font-weight: bold; margin-bottom: 10px;">2000+
+                                        </h2>
+                                        <h3 style="font-size: 18px; font-weight: bold; margin-top: 10px;">
+                                            POSTGRADUATE STUDENTS</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Add more carousel items as needed -->
+                        </div>
+
+                    </div>
+                </div>
+
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="bg-white">
+    <div class="container">
+        <div class="card border-0">
+            <div class="row g-0">
+                <div class="col-md-6">
+                    <div class="card-body text-center">
+                        <h3 class="pt-5">Choose from <br> 40+ Undergraduate degrees <br> 40+ Postgraduate degrees
+                        </h3>
+                        <p class="card-text pt-5">
+                            Earn a bachelor, master or doctorate degree at Bingham University
+                        </p>
+                        <p class="mt-3">
+                            To learn more about us and our programs download our mini-bulletin
+                        </p>
+                        <a class="btn btn-outline-primary mt-3"
+                            href="https://binghamuni.edu.ng/v2/uploads/bing bulletine pamphlet.pdf" style="font-size: 14px;"
+                            download>
+                            <svg style="width:16px; height:16px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download-cloud"><polyline points="8 17 12 21 16 17"></polyline><line x1="12" y1="12" x2="12" y2="21"></line><path d="M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29"></path></svg> Mini Bulletin
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img class="img-fluid" src="https://binghamuni.edu.ng/v2/images/about-programs.jpg" class="img-fluid"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-gray py-5 animate__animated animate__fadeInLeft">
+    <div class="container">
+        <div class="d-flex justify-content-between mb-2">
+            <h5 class="text-center text-uppercase">University News</h5>
+            <a class="text-uppercase" href="https://binghamuni.edu.ng/v2/posts">
+                See all news
+            </a>
+        </div>
+        <hr class="mb-4">
+        <div class="content">
+            <div class="card-group">
+                                        <div class="card border-0 shadow-sm m-3">
+                        <img src="images/posts/IMG-20240327-WA0066.jpg" class="card-img-top img-fluid" style="height:300px;"
+                            alt="...">
+                        <div class="card-body">
+                            <h6 class="card-title">
+                                <a href="https://binghamuni.edu.ng/v2/posts/the-ceo-of-the-light-consortium-liverpool-school-of-tropical-medicine-pays-vice-chancellor-prof-haruna-kuje-ayuba-a-courtesy-visit">
+                                    The Ceo Of The Light Consortium, Liverpool School Of Tropical Medicine, Pays Vice Chancellor Prof Haruna Kuje Ayuba A Courtesy Visit
+                                </a>
+                            </h6>
+                            <small class="text-black-50 fs-6">
+                                Posted on Mar 29th, 2024
+                            </small>
+                            <p class="card-text lh-lg text-muted truncate">
+                                <p>Dr. Rachael Thomsom, Chief Executive Officer of the LIGHT Consortium from the Liverpool School of Tropical Medicine United Kingdom, and the team fr...
+                            </p>
+                        </div>
+                    </div>
+                                        <div class="card border-0 shadow-sm m-3">
+                        <img src="images/posts/WhatsApp Image 2024-03-23 at 8.47.18 AM.jpeg" class="card-img-top img-fluid" style="height:300px;"
+                            alt="...">
+                        <div class="card-body">
+                            <h6 class="card-title">
+                                <a href="https://binghamuni.edu.ng/v2/posts/the-6th-governing-council-of-bingham-university-pays-condolence-visit-to-chancellor-and-esu-karu-over-the-demise-of-his-siblings">
+                                    The 6Th Governing Council Of Bingham University Pays Condolence Visit To Chancellor And Esu Karu Over The Demise Of His Siblings
+                                </a>
+                            </h6>
+                            <small class="text-black-50 fs-6">
+                                Posted on Mar 23rd, 2024
+                            </small>
+                            <p class="card-text lh-lg text-muted truncate">
+                                <p>The 6th Governing Council of Bingham University led by the Chairman of Council, Prof. Andrew Haruna has paid a condolence visit to the Chancellor a...
+                            </p>
+                        </div>
+                    </div>
+                                        <div class="card border-0 shadow-sm m-3">
+                        <img src="images/posts/WhatsApp Image 2024-03-14 at 11.24.14.jpeg" class="card-img-top img-fluid" style="height:300px;"
+                            alt="...">
+                        <div class="card-body">
+                            <h6 class="card-title">
+                                <a href="https://binghamuni.edu.ng/v2/posts/national-universities-commission-nuc-visit-bingham-university-on-facilities-assessment-tour-commend-the-university-for-good-sanitation-practice">
+                                    National Universities Commission (Nuc) Visit Bingham University On Facilities Assessment Tour, Commend The University For Good Sanitation Practice
+                                </a>
+                            </h6>
+                            <small class="text-black-50 fs-6">
+                                Posted on Mar 14th, 2024
+                            </small>
+                            <p class="card-text lh-lg text-muted truncate">
+                                <p>National Universities Commission (NUC) was on facility assessment visit to Bingham University to ascertain the level and functionality of the stude...
+                            </p>
+                        </div>
+                    </div>
+                                </div>
+        </div>
+    </div>
+</section>
+
+<section class="partners mb-4">
+    <div class="container">
+        <h5 class="text-uppercase mb-3">Partners</h5>
+        <div class="row">
+            <div class="col-md-3">
+                <a href="https://int.sumdu.edu.ua/en" target="_blank">
+                    <div class="card border-0 shadow-sm">
+                        <svg width=200 height=100 x="0" y="0" viewBox="0 0 3612.7 1813.3"
+                            style="enable-background:new 0 0 3612.7 1813.3" xml:space="preserve">
+                            <style>
+                                .st0,
+                                .st1 {
+                                    fill: #0f355d
+                                }
+
+                                .st1 {
+                                    fill-rule: evenodd;
+                                    clip-rule: evenodd
+                                }
+                            </style>
+                            <g id="Слой_x0020_1">
+                                <path class="st0"
+                                    d="M1827.7 1638c61 0 98.3-38.7 98.3-105.5v-217.9h-58.2v217.9c0 34.1-14.6 51.4-40 51.4-25.5 0-40-17.3-40-51.4v-217.9H1730v217.9c-.1 66.8 37.2 105.5 97.7 105.5zm232.6-251.6c-26.4 0-46 11.4-58.2 31.8l-4.6-25.9h-36.4V1633h53.7v-150.6c0-29.1 12.7-44.6 32.8-44.6 18.7 0 28.2 13.2 28.2 47.3V1633h53.7v-149.2c-.1-65.5-26-97.4-69.2-97.4zm129.3-31.4c17.7 0 31.4-14.6 31.4-31.4 0-18.2-13.7-31.4-31.4-31.4-18.2 0-30.9 13.2-30.9 31.4-.1 17.8 12.7 31.4 30.9 31.4zm-26.9 278h53.7v-240.7h-53.7V1633zm198.9-240.7-20 90.5c-5.9 28.7-13.2 67.8-16.8 86.9h-2.7c-3.2-19.1-10.5-58.2-16.8-86.9l-20-90.5h-56.9l65.1 240.7h60.1l65.1-240.7h-57.1zm183 164.7c-4.1 20.9-12.3 30-34.6 30-20 0-31.4-12.8-31.4-41.4v-14.1h116.9v-53.7c0-57.8-32.3-91.5-86-91.5-52.8 0-84.6 33.7-84.6 91.5v67.8c0 58.2 31.8 92.8 84.2 92.8 52.8 0 85.1-30 89.6-81.4h-54.1zm-34.6-120.5c20.9 0 32.3 12.7 32.3 40.9v15.9h-63.7v-15.9c0-28.2 11.4-40.9 31.4-40.9zm216.6-49.6c-27.7 0-48.7 11.4-61.4 31.8l-4.6-26.4h-36.4V1633h53.7v-149.7c0-30.5 17.3-46 45-46 11.4 0 20.9 2.3 29.6 5.9v-51.9c-6.8-3.1-15.4-4.4-25.9-4.4zm116.1 252.5c52.3 0 83.3-29.6 83.3-73.2 0-86.9-116-71.9-116-110.5 0-12.8 10.5-21.4 27.3-21.4 20.5 0 29.6 11.8 30.5 30.9h51.9c-2.7-45-27.7-78.7-82.3-78.7-49.1 0-80.5 25.9-80.5 68.7 0 81.9 115.5 68.2 115.5 111 0 14.6-11.4 24.1-30.9 24.1-25.5 0-34.6-16.4-35-32.8h-53.7c.7 43.7 31.2 81.9 89.9 81.9zm131.5-284.4c17.7 0 31.4-14.6 31.4-31.4 0-18.2-13.7-31.4-31.4-31.4-18.2 0-30.9 13.2-30.9 31.4 0 17.8 12.7 31.4 30.9 31.4zm-26.8 278h53.7v-240.7h-53.7V1633zm185.2-47.3c-20.9 0-30.5-10.5-30.5-33.2V1441h41.9v-48.7h-41.9V1335h-53.2v57.3h-32.3v48.7h32.3v111c0 51.9 30.5 84.2 80.5 84.2h18.2v-50.5h-15zm155.7-193.4-40 138.8-44.6-138.8h-56l77.8 216.1-7.7 27.3c-5.9 20-11.8 31.4-28.7 31.4h-16.8v51.9h27.8c38.2 0 56.9-31.8 68.7-73.7l74.6-253h-55.1zM1813.9 1184.2c61.4 0 96.5-39.6 96.5-89.6 0-100.1-129.7-101.9-129.7-157.4 0-18.2 12.3-30 33.2-30 21.4 0 34.1 12.3 34.6 37.8h57.3c-.5-56.9-35-91.9-91.9-91.9-56.4 0-90.1 35.5-90.1 82.8 0 96 128.3 100.5 128.3 158.3 0 20.5-12.3 35.5-37.8 35.5-24.1 0-39.1-13.2-39.6-41.9h-57.3c.5 61.3 37.8 96.4 96.5 96.4zm222.8-53.7c-20.9 0-30.5-10.5-30.5-33.2V985.8h41.9v-48.7h-41.9v-57.3H1953v57.3h-32.3v48.7h32.3v111c0 51.9 30.5 84.2 80.5 84.2h18.2v-50.5h-15zM2163 931.2c-51 0-82.3 29.6-84.6 78.3h53.7c2.3-18.7 15-26.4 30-26.4 20 0 27.3 14.1 27.3 38.7v11.8h-28.2c-52.8 0-89.6 24.6-89.6 75.5 0 44.1 28.2 75.1 72.3 75.1 27.3 0 44.1-12.7 53.2-29.1l3.2 22.7h43.2v-156c0-58.7-25.9-90.6-80.5-90.6zm26.4 172.9c0 20.5-12.7 33.2-32.8 33.2-20.5 0-30.5-11.8-30.5-28.2 0-19.6 13.2-30 35.9-30h27.3v25h.1zm193.6 26.4c-20.9 0-30.5-10.5-30.5-33.2V985.8h41.8v-48.7h-41.8v-57.3h-53.2v57.3H2267v48.7h32.3v111c0 51.9 30.5 84.2 80.5 84.2h18.2v-50.5h-15zm161.3-28.7c-4.1 20.9-12.3 30-34.6 30-20 0-31.4-12.8-31.4-41.4v-14.1h116.9v-53.7c0-57.8-32.3-91.5-86-91.5-52.8 0-84.6 33.7-84.6 91.5v67.8c0 58.2 31.8 92.8 84.2 92.8 52.8 0 85.1-30 89.6-81.4h-54.1zm-34.5-120.5c20.9 0 32.3 12.7 32.3 40.9v15.9h-63.7v-15.9c0-28.2 11.3-40.9 31.4-40.9zM1815.1 762.8c61.4 0 96.4-39.6 96.4-89.6 0-100.1-129.7-101.9-129.7-157.4 0-18.2 12.3-30 33.2-30 21.4 0 34.1 12.3 34.6 37.8h57.3c-.5-56.9-35-91.9-91.9-91.9-56.4 0-90.1 35.5-90.1 82.8 0 96 128.3 100.5 128.3 158.3 0 20.5-12.3 35.5-37.8 35.5-24.1 0-39.1-13.2-39.6-41.8h-57.3c.6 61.2 37.9 96.3 96.6 96.3zm238-247.1v150.6c0 29.1-12.7 44.6-32.7 44.6-18.7 0-28.2-13.2-28.2-47.3V515.7h-53.7v149.2c0 65.5 25.9 97.4 69.1 97.4 26.4 0 46-11.4 58.2-31.8l4.5 25.9h36.4V515.7h-53.6zm305.3-5.9c-25.9 0-45.5 11.4-57.8 32.3-11.4-21.4-30.5-32.3-54.6-32.3-25.5 0-45 11.4-56.9 31.4l-4.6-25.5h-35.9v240.7h53.2V605.8c0-29.1 12.8-44.6 31.4-44.6 17.7 0 27.3 12.3 27.3 46.9v148.3h53.2V605.8c0-29.1 12.7-44.6 31.8-44.6 17.3 0 26.8 12.3 26.8 46.9v148.3h53.2V607.6c.2-65-25.2-97.8-67.1-97.8zm218.4 5.9-40 138.8-44.6-138.8h-56l77.8 216.1-7.7 27.3c-5.9 20-11.8 31.4-28.7 31.4h-16.8v51.9h27.7c38.2 0 56.9-31.8 68.7-73.7l74.6-252.9-55-.1z" />
+                                <g id="_2350858225200">
+                                    <path class="st1"
+                                        d="M1208.1 833.5c47.3-15.6 98.5-29.9 139.4-39.8l-.1-66c-63.8 11.2-136 28.2-211.7 51.4 29 16.1 52.1 33.7 72.4 54.4zM628.2 1075.3c15.9-8.3 35.6-18.2 51.7-24.8.3-30.4 4.3-59.2 13.1-88.7-21.1 10.9-45 23.5-64.8 34.5v79z" />
+                                    <path class="st1"
+                                        d="m901.8 1311.3 13.6 21.7c-12.9-3.3-23-7.9-35.3-13-86 30.7-167.7 56-242.4 75.8-.3 10 6.6 26.4 9.1 32.3 6.2 14.4 16.7 36.1 25.2 48.7l14.9 22.1c15.8 21.3 42.3 49.2 64.1 65.3 21.3 15.8 30.3 23.2 55.3 38.3 28.6 17.2 72.2 34.4 105.4 42.4 58.4 14 127.6 10.8 182.7-9.9 42.6-16 57.2-26.2 92.2-53.1 8.6-6.6 29-26.5 36.3-35.2.2-.2.4-.5.6-.7l31.4-40c8.4-11.6 14.9-23 22.3-35.5l10.4-19.2c11.3-22.7 17-34.5 26.6-59.7 9.9-26 21.2-61.4 27.1-88.7 7.1-32.7 13.1-62.9 16.6-99.2 4.5-46.4 4.2-70 4.2-116.1-29.5 18.5-60.8 36.9-94.3 54.8-14.4 42.4-37.9 79.2-68.7 110.4l-5.6-73.8-8.4 5.7 5.9 77.1c-52.5 49.5-123.2 79.9-201 79.9-21.3 0-42.2-2.3-62.3-6.7l-16.7-26.5-9.2 2.8zM386 1158.1l4.3 63.2c-75.5 55.8-114.5 101.9-102.7 128.9 28.8 65.8 348.9-6.8 714.8-162.2 365.9-155.4 639.2-334.8 610.4-400.6-11-25.1-64.5-30.1-147-18.3l-.1-55.4c97.7-4.9 163.9 12.3 181.9 54.2 25.7 59.9-53 157.1-196.8 260.5l-.4 92.6c0 15.1-1.1 43.8-3.2 58.4-1.4 9.6-1.3 19.8-2.6 28.2-8.9 58.7-14.9 96.6-33.5 152.5-19.5 58.7-48.7 113-84.9 162.7-8.7 11.9-18.9 22.2-27.8 33.8l-11.2 12.2c-5.8 7-12.9 12.6-19.4 18.8-13.3 12.8-27 24.8-41.7 35.9-3.1 2.3-5.6 3.9-8.6 6.1-3.4 2.5-5.8 4.1-9.4 6.6-3.4 2.3-5.1 4-8.6 6.2l-54.3 30.7c-69.1 35.4-140.2 49.8-234.4 50.3h-3.1c-5.5-.1-8.5-.5-12.9-1-4.8-.5-9.7.1-14.5-.2-60.7-4.9-115.5-21.5-170.4-45.2-27.9-12.1-54-28.2-78.1-46.3-6.2-4.6-11.7-8.8-17.6-13.2-20.5-15.4-41.1-32-58.6-51-17.1-18.5-33.5-37.5-46.8-59.2-4.3-7-7.9-11.9-12-18.8-11.7-19.7-28.3-47.8-38.6-67.1-110.2 10.1-185.8-6.5-205.2-51.6-21.8-50.3 30.4-127.1 133-211.7z" />
+                                    <path class="st1"
+                                        d="M283.1 490.7c97 8.1 115.1 32.1 115.1 127.7v409.4c0 86 3 166.5 10.1 227.6 3.5 30.4 14 65.4 26.6 95.4 67.9-10 126.4-23.6 180.9-42-2.9-11.4-3-15.2-3-28.9 0-177.3 1.3-450.6 1.3-636.9 0-165.9 72.2-150.6 90.7-152.3V436H284l-.9 54.7zM1252 487.7c0 5.8 8.1 3.2 14.4 4 36.1 4.5 65.5 14.7 85.3 49 10.9 18.9 11.1 36 11.1 65.2l.9 388.7c19.8-11.4 72.5-42.4 87.5-54.2 0-114.5.3-234.7.3-349.3 0-26.1 3-39.4 13.8-55.2 13.6-20 38.2-35.4 61.6-41.9l30.6-3.9v-43.2c.1-5.5 1.5-11-3.7-11H1252v51.8zM1022.9 195.1c19.2-18.9 20.9-33.4 20.9-54.2 0-5.9-2.5-9.6-3.7-14.8-32.2 43.6-116.2 11.6-164.4 61.1-60.1 61.2 11 125.5 55.2 134.8 8.5-87.5 131.1-41.6 131.4-79 21.8 16.1 4 54.8-12.3 75.4 156.3-16.2 110.2-213.3 172.4-248.9-80.8-.1-134.5 125.6-199.5 125.6zM799.7 391.3c24.5 0 29.2-6.4 54 32.9 14.3 19.8 22.5 46.3 47.3 46.3h174.9c15.2 0 31.2-29 41.6-44.6 21.1-31.5 23.3-34.2 55.1-34.2l-.6-51.7H800c0 12.5-.3 38.5-.3 51.3zM1044.8 747.4l19.7-249.8H917l19.7 248.9c36.2-5.4 71-4.5 108.1.9zM989.8 1526.4l-5.1-.1c-7.5 0-14.8-6.1-15.9-12.4l-13-156.4c23.6 2.4 45.3 3 67.7-.1l-12.8 156.5c-.7 6.2-8.4 12.4-15.9 12.4l-5 .1zM1152.6 1105.2l-43.1-20.4c-1.3-.6-2.6-1.4-3.9-2-1.6-.7-3-1.3-4.6-2.1-17.6-9-40.9-19.3-59.2-28.2l-26.2-12.4c-4.5 5.3-11.3 9.7-21.8 7.3L905 1212.5c84.6-33.2 167.8-69.5 247.6-107.3z" />
+                                    <path class="st1"
+                                        d="M809 916.1c3 1.8 7.1 6.3 8 10.4l240.1-43.3c.2-13.4 13.1-22.8 26.4-19l40.7-76c-78.2-38-171.8-45.2-252.5-7.9L809 916.1zM1178.4 1092.8 1161 872.4l-63.1 11.3c-.3 16-13.5 22.4-26.7 19.6l-58.4 109.1c7 5.8 7.3 13.4 6.2 20.9l143.2 67.5c5.5-2.8 10.9-5.4 16.2-8zM1186.2 1089 1169 871.2l46.8-8.5c37.5 47.1 64.6 107.5 66 178.3-30.9 16.2-63.1 32.3-95.6 48zM854.6 1232.6 743 1055l-35.3 75.8c14.4 53.7 56.9 111 76.6 127.9 23.6-8.6 47-17.3 70.3-26.1zM818 934.6l-.4 2.6 165.5 78.4c2.7-3.8 11-11.2 22.4-7.3l58.5-109.2c-1.6-1.5-4.5-4.6-5.5-8L818 934.6zM736.5 898.4l45.3 21.9c3.6-4.2 9.6-8.4 19.9-7.5l59.1-128.2c-53.7 26.4-93.9 62.3-124.3 113.8zM710.5 953.9c-1.4 3.9-5.4 17.5-6.3 23.6l38.5 61.4 41.9-90.1c-1.9-1.6-4.2-4.1-5.3-6.9l-68.8 12zM1090.6 868c2.1 1.9 5 5.1 5.7 8l64.1-11.5-4.5-57.2c-4.5-3.1-18.1-12.8-24.7-15.7l-40.6 76.4zM703.9 1120.4l34.1-72-36.6-59.1c-11 51.8-3.1 105.2 2.5 131.1zM713.8 945.2l63.6-10.6c-.3-2 0-5.4.9-7.8l-45.9-21.3c-5.8 9.4-13.3 26.4-18.6 39.7zM1168.4 862.6l41.1-6.9c-5.2-6.9-37.7-38.4-45.2-42.3l4.1 49.2zM892.9 1217.7c-10.2 4-20.6 8-30.8 11.9l-114.5-182.1 42.6-95.5c6.5 2.8 20.1 1.2 24.5-7.6l164.7 78.4c-2.3 10.6 2.2 17.2 6.9 21.1l-93.4 173.8z" />
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="https://www.thejonahinheritance.org" target="_blank">
+                    <div class="card border-0 shadow-sm">
+                        <img src="https://binghamuni.edu.ng/v2/uploads/partners/jonah-inheritance.png"
+                            alt="The Jonah Inheritance">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Modals -->
+<div class="modal fade" id="warning">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><strong>Birthday Wishes</strong></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="https://binghamuni.edu.ng/v2/images/birthday.jpeg" alt=""
+                    style="width: 100%; height: 100%;">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</main>
+
+<footer class="bg-dark">
+<div class="container py-4 border-bottom">
+    <div class="row">
+        <div class="col-md-6">
+            <h6 class="text-white text-uppercase">Know it all first!</h6>
+            <p class="text-white-50">
+                Get the latest news about Bingham University directly into your
+                inbox.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <div class="p-1 rounded border">
+                <form action="https://binghamuni.edu.ng/v2/subscribe" method="POST">
+                    <input type="hidden" name="_token" value="ugiSGl8mOKbNSLzYKbEViDsuyVMAIpJx47vOacX7">                        <div class="input-group">
+                        <input name="email" type="email" class="form-control border-0 shadow-0"
+                            placeholder="Enter your email address" aria-label="Email Address" required />
+                        <button class="btn btn-primary" type="submit">
+                            Subscribe
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-4 border-bottom text-white">
+    <div class="row py-4">
+        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 text-sm-center">
+            <img src="https://binghamuni.edu.ng/v2/images/bhu_logo.png" alt="" width="120" class="mb-3">
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h6 class="text-uppercase font-weight-bold mb-4">Quick Links</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><a href="#" class="text-white-50">Our Campus</a></li>
+                        <li class="mb-2"><a href="https://zankli.binghamuni.edu.ng/" target="_blank"
+                                class="text-white-50">Research</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">Projects</a></li>
+                        <li class="mb-2"><a href="https://binghamuni.edu.ng/v2/careers" class="text-white-50">Careers</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h6 class="text-uppercase font-weight-bold mb-4">Other Links</h6>
+                    <ul class="list-unstyled mb-0">
+                        
+                        <li class="mb-2"><a href="https://journal.binghamuni.edu.ng" target="_blank"
+                                class="text-white-50">Journal</a></li>
+                        <li class="mb-2"><a href="https://moodle.binghamuni.edu.ng"
+                                class="text-white-50">E-Learning</a></li>
+                        <li><a href="http://binghamuni.edu.ng/library/index.php/repository" target="_blank"
+                                class="text-white-50">Open Courseware</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-lg-0">
+                    <h6 class="text-uppercase font-weight-bold mb-4">Resources</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><a href="https://binghamuni.edu.ng/v2/pages/departmental_email"
+                                class="text-white-50">Departmental
+                                Emails</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="https://binghamuni.edu.ng/v2/uploads/BHU Environmental policy edits.docx"
+                                download="BHU Environmental policy edits.docx" class="text-white-50">
+                                Bingham Environmental Policy
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-lg-0">
+                    <h6 class="text-uppercase font-weight-bold mb-4">Contact</h6>
+                    <p class="">
+                        <span class="d-block text-white-50">Bingham University,</span>
+                        <span class="d-block text-white-50">Km 26 Abuja - Keffi</span>
+                        <span class="d-block text-white-50">Express Way Kodope,</span>
+                        <span class="d-block text-white-50">Nasarawa State</span>
+                    </p>
+                    <p class="">
+                        <span class="d-block text-white-50">Phone: 07068615119</span>
+                        <span class="d-block text-white-50">Phone: 07065092268</span>
+                        <span class="d-block text-white-50">Phone: 07064483649</span>
+                        <span class="d-block text-white-50">(Office Hours: 8am - 4pm)</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="py-2">
+    <div class="container py-2 d-md-flex justify-content-between">
+        <div class="text-white mt-2 text-sm-center">© 2024 Bingham University. This is a final year project to create the Chatbot feature.</div>
+        <div class="mb-0 d-none d-md-flex">
+            <a href="https://binghamuni.edu.ng/v2/contact" class="nav-link text-white-50">Contact</a>
+            <a href="" class="nav-link text-white-50">Privacy Policy</a>
+            <a href="" class="nav-link text-white-50">Terms Of Use</a>
+            <a href="" class="nav-link text-white-50">Disclaimer</a>
+        </div>
+    </div>
+</div>
+</footer>
+
+<script src="https://binghamuni.edu.ng/v2/js/guest.js"></script>
+        <script>
+        $(window).on('load', function() {
+            $('#warning').modal('show');
+        });
+        $('.carousel').carousel({
+            interval: false // Disable automatic sliding
+        });
+    </script>
+    <script src="https://binghamuni.edu.ng/v2/js/script.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script src="https://binghamuni.edu.ng/v2/livewire/livewire.js?id=90730a3b0e7144480175" data-turbo-eval="false" data-turbolinks-eval="false" ></script><script data-turbo-eval="false" data-turbolinks-eval="false" >window.livewire = new Livewire();window.Livewire = window.livewire;window.livewire_app_url = 'https://binghamuni.edu.ng/v2';window.livewire_token = 'ugiSGl8mOKbNSLzYKbEViDsuyVMAIpJx47vOacX7';window.deferLoadingAlpine = function (callback) {window.addEventListener('livewire:load', function () {callback();});};let started = false;window.addEventListener('alpine:initializing', function () {if (! started) {window.livewire.start();started = true;}});document.addEventListener("DOMContentLoaded", function () {if (! started) {window.livewire.start();started = true;}});</script>
+</body>
 <div class="container">
     <div class="chatbox">
         <div class="chatbox__support">
@@ -16,7 +994,7 @@
                 </div>
                 <div class="chatbox__content--header">
                     <h4 class="chatbox__heading--header">Bingham University Chat support</h4>
-                    <p class="chatbox__description--header">Hi. My name is Vivian. How can I help you?</p>
+                    <p class="chatbox__description--header">Hi. My name is Viola. How can I help you?</p>
                 </div>
             </div>
             <div class="chatbox__messages">

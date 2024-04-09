@@ -11,20 +11,54 @@ body {
     background: #F1F1F1;
 }
 
-*, html {
+/* *, html {
     --primaryGradient: linear-gradient(93.12deg, #581B98 0.52%, #9C1DE7 100%);
     --secondaryGradient: linear-gradient(268.91deg, #581B98 -2.14%, #9C1DE7 99.69%);
     --primaryBoxShadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
     --secondaryBoxShadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
     --primary: #581B98;
+} */
+*, html {
+    --primaryGradient: linear-gradient(93.12deg, #253b80 0.52%, #5078a9 100%);
+    --secondaryGradient: linear-gradient(268.91deg, #253b80 0.52%, #5078a9 48%);
+    --primaryBoxShadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    --secondaryBoxShadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
+    --primary: #253b80;
 }
 
+@media (max-width: 767px) {
+
+    /* Apply styles for screens up to 767px wide (typically mobile devices) */
+    .carousel-inner img {
+        height: 300px;
+        /* Set the image height to 300px on mobile */
+    }
+
+    #caption {
+        font-size: 20px !important;
+        font-weight: normal;
+    }
+}
+
+.card-container {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.new {
+    display: inline-block;
+    width: 300px;
+    margin-bottom: 10px;
+    /* Adjust the width based on your card design */
+    margin-right: 15px;
+}
 /* CHATBOX
 =============== */
 .chatbox {
-    position: absolute;
+    position: fixed;
     bottom: 30px;
     right: 30px;
+    z-index: 9999;
 }
 
 /* CONTENT IS CLOSE */
