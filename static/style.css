@@ -11,33 +11,12 @@ body {
     background: #F1F1F1;
 }
 
-/* *, html {
-    --primaryGradient: linear-gradient(93.12deg, #581B98 0.52%, #9C1DE7 100%);
-    --secondaryGradient: linear-gradient(268.91deg, #581B98 -2.14%, #9C1DE7 99.69%);
-    --primaryBoxShadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
-    --secondaryBoxShadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
-    --primary: #581B98;
-} */
 *, html {
     --primaryGradient: linear-gradient(93.12deg, #253b80 0.52%, #5078a9 100%);
     --secondaryGradient: linear-gradient(268.91deg, #253b80 0.52%, #5078a9 48%);
     --primaryBoxShadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
     --secondaryBoxShadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
     --primary: #253b80;
-}
-
-@media (max-width: 767px) {
-
-    /* Apply styles for screens up to 767px wide (typically mobile devices) */
-    .carousel-inner img {
-        height: 300px;
-        /* Set the image height to 300px on mobile */
-    }
-
-    #caption {
-        font-size: 20px !important;
-        font-weight: normal;
-    }
 }
 
 .card-container {
@@ -49,19 +28,18 @@ body {
     display: inline-block;
     width: 300px;
     margin-bottom: 10px;
-    /* Adjust the width based on your card design */
     margin-right: 15px;
 }
-/* CHATBOX
-=============== */
+
 .chatbox {
     position: fixed;
     bottom: 30px;
     right: 30px;
     z-index: 9999;
 }
-
-/* CONTENT IS CLOSE */
+.chatbox__content--header {
+    width: 700px; /* Adjust this value as needed */
+}
 .chatbox__support {
     display: flex;
     flex-direction: column;
@@ -73,15 +51,12 @@ body {
     transition: all .5s ease-in-out;
 }
 
-/* CONTENT ISOPEN */
 .chatbox--active {
     transform: translateY(-40px);
     z-index: 123456;
     opacity: 1;
-
 }
 
-/* BUTTON */
 .chatbox__button {
     text-align: right;
 }
@@ -94,15 +69,12 @@ body {
     cursor: pointer;
 }
 
-
-/* HEADER */
 .chatbox__header {
     position: sticky;
     top: 0;
     background: orange;
 }
 
-/* MESSAGES */
 .chatbox__messages {
     margin-top: auto;
     display: flex;
@@ -124,7 +96,6 @@ body {
     margin-right: auto;
 }
 
-/* FOOTER */
 .chatbox__footer {
     position: sticky;
     bottom: 0;
@@ -132,14 +103,13 @@ body {
 
 .chatbox__support {
     background: #f9f9f9;
-    height: 450px;
-    width: 350px;
+    height: 800px;
+    width: 500px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
 
-/* HEADER */
 .chatbox__header {
     background: var(--primaryGradient);
     display: flex;
@@ -166,7 +136,6 @@ body {
     color: white;
 }
 
-/* Messages */
 .chatbox__messages {
     padding: 0 20px;
 }
@@ -193,7 +162,6 @@ body {
     color: white;
 }
 
-/* FOOTER */
 .chatbox__footer {
     display: flex;
     flex-direction: row;
