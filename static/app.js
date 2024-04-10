@@ -25,7 +25,7 @@ class Chatbot {
         })
     }
     onScroll() {
-        if (window.scrollY > 100) {
+        if (window.scrollY > 100 && !this.state) {
             this.showPopup();
         } else {
             this.hidePopup();
@@ -38,8 +38,14 @@ class Chatbot {
             this.popup.style.position = 'fixed';
             this.popup.style.bottom = '100px';
             this.popup.style.right = '100px';
-            this.popup.style.padding = '10px';
+            this.popup.style.padding = '20px';
             this.popup.style.backgroundColor = 'lightblue';
+            this.popup.style.fontSize = '20px'; // Increase the font size
+            this.popup.style.color = 'black'; // Change the text color
+            this.popup.style.border = '1px solid black';
+            this.popup.style.width = '200px'; // Set the width
+            this.popup.style.height = '200px';
+            
             document.body.appendChild(this.popup);
         }
         this.popup.style.display = 'block';
