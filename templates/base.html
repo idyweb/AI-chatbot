@@ -1,65 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-<link rel="apple-touch-icon" sizes="180x180" href="https://binghamuni.edu.ng/v2/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://binghamuni.edu.ng/v2/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://binghamuni.edu.ng/v2/favicon/favicon-16x16.png">
-<link rel="manifest" href="https://binghamuni.edu.ng/v2/favicon/site.webmanifest">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://binghamuni.edu.ng/v2/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://binghamuni.edu.ng/v2/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://binghamuni.edu.ng/v2/favicon/favicon-16x16.png">
+    <link rel="manifest" href="https://binghamuni.edu.ng/v2/favicon/site.webmanifest">
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.binghamuni.edu.ng/">
-<meta property="og:title" content="Bingham University">
-<meta property="og:description" content="">
-<meta property="og:image" content="https://www.binghamuni.edu.ng/images/binghamuni.jpg">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.binghamuni.edu.ng/">
+    <meta property="og:title" content="Bingham University">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://www.binghamuni.edu.ng/images/binghamuni.jpg">
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://www.binghamuni.edu.ng/">
-<meta property="twitter:title" content="Bingham University">
-<meta property="twitter:description" content="">
-<meta property="twitter:image" content="https://www.binghamuni.edu.ng/images/binghamuni.jpg">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.binghamuni.edu.ng/">
+    <meta property="twitter:title" content="Bingham University">
+    <meta property="twitter:description" content="">
+    <meta property="twitter:image" content="https://www.binghamuni.edu.ng/images/binghamuni.jpg">
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
 
-<link href="https://binghamuni.edu.ng/v2/css/guest.css" rel="stylesheet">
-        <style>
-        /* Add this CSS to your stylesheet */
-        @media (max-width: 767px) {
+    <link href="https://binghamuni.edu.ng/v2/css/guest.css" rel="stylesheet">
+            <style>
+            /* Add this CSS to your stylesheet */
+            @media (max-width: 767px) {
 
-            /* Apply styles for screens up to 767px wide (typically mobile devices) */
-            .carousel-inner img {
-                height: 300px;
-                /* Set the image height to 300px on mobile */
+                /* Apply styles for screens up to 767px wide (typically mobile devices) */
+                .carousel-inner img {
+                    height: 300px;
+                    /* Set the image height to 300px on mobile */
+                }
+
+                #caption {
+                    font-size: 20px !important;
+                    font-weight: normal;
+                }
             }
 
-            #caption {
-                font-size: 20px !important;
-                font-weight: normal;
+            .card-container {
+                overflow-x: auto;
+                white-space: nowrap;
             }
-        }
 
-        .card-container {
-            overflow-x: auto;
-            white-space: nowrap;
-        }
+            .new {
+                display: inline-block;
+                width: 300px;
+                margin-bottom: 10px;
+                /* Adjust the width based on your card design */
+                margin-right: 15px;
+            }
+        </style>
+        <link href="https://binghamuni.edu.ng/v2/css/styles.css" rel="stylesheet">
 
-        .new {
-            display: inline-block;
-            width: 300px;
-            margin-bottom: 10px;
-            /* Adjust the width based on your card design */
-            margin-right: 15px;
-        }
-    </style>
-    <link href="https://binghamuni.edu.ng/v2/css/styles.css" rel="stylesheet">
-
-<style >[wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid], [wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short], [wire\:loading\.delay\.long], [wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest] {display:none;}[wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {animation-duration: 50000s;animation-name: livewireautofill;}@keyframes livewireautofill { from {} }</style>
+    <style >[wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid], [wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short], [wire\:loading\.delay\.long], [wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest] {display:none;}[wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {animation-duration: 50000s;animation-name: livewireautofill;}@keyframes livewireautofill { from {} }</style>
 
 </head>
 
