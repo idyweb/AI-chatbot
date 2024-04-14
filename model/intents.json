@@ -556,7 +556,8 @@
   "patterns": [
     "How many students are enrolled at Bingham University?",
     "How many students are there in Bingham University?",
-    "What is the student population at Bingham University?"
+    "What is the student population at Bingham University?",
+    "What is the total number of students in Bingham University?"
   ],
   "responses": [
     "As of now, Bingham University has a current population of over 7,000 undergraduates and 2,000 postgraduates."
