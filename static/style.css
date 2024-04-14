@@ -17,7 +17,6 @@ body {
   padding-left: var(--bs-gutter-x, 0.75rem);
   margin-right: auto;
   margin-left: auto;
-  border: 1px solid red;
 }
 
 @media (min-width: 475px) {
