@@ -34,17 +34,19 @@ class Chatbot {
     showPopup() {
         if (!this.popup) {
             this.popup = document.createElement('div');
-            this.popup.textContent = 'For More enquires about Bingham University, Chat with us here!!';
+            this.popup.textContent = 'Hi !👋..My name is viola For more enquiries about Bingham university, chat with us here. Thank you!!😊';
             this.popup.style.position = 'fixed';
             this.popup.style.bottom = '100px';
             this.popup.style.right = '100px';
             this.popup.style.padding = '20px';
             this.popup.style.backgroundColor = 'lightblue';
             this.popup.style.fontSize = '20px'; // Increase the font size
+            this.popup.style.fontFamily = 'Arial, sans-serif'; // Change the font family
+            this.popup.style.fontWeight = 'bold';
             this.popup.style.color = 'black'; // Change the text color
             this.popup.style.border = '1px solid black';
-            this.popup.style.width = '200px'; // Set the width
-            this.popup.style.height = '200px';
+            this.popup.style.width = '350px'; // Set the width
+            this.popup.style.height = '150px';
             
             document.body.appendChild(this.popup);
         }
