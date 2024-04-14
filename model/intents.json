@@ -66,7 +66,7 @@
         ]
       },
       {
-        "tag": "mission_vision",
+        "tag": "missionvision",
         "patterns": [
           "What is the Mission and Vision of Bingham University?", "What is the Mission of Bingham University?", "What is the Vision of Bingham University?"
         ],
@@ -143,7 +143,7 @@
         "context": [""]
       },
       {
-        "tag": "completed application",
+        "tag": "completedapplication",
         "patterns": ["How do I submit my completed application forms to Bingham University?", "What are the steps for submitting completed forms to Bingham University?", "Can you guide me through the submission process for Bingham University's application forms?"],
         "responses": ["To submit completed application forms to Bingham University, follow these steps:\n1. After successfully completing the payment transaction, access the online application forms. Fill out the forms completely.\n2. Once the forms are filled out, submit them using the 'Form submission' button.\n3. Print out the filled forms.\n4. Submit the printed forms to the University’s Admissions Office on or before the day of the screening.\nFor technical enquiries or complaints, contact the following:\n- Email: registrar@binghamuni.edu.ng, webmster@binghamuni.edu.ng, systemadmin@binghamuni.edu.ng\n- Phone: 09013670234\nProvide the following details when contacting: RRR No., First name, Last name, Amount, Your phone number, and the details of the problem(s) encountered.\nPlease note that the guidelines for registration can be found on the University's website: www.binghamuni.edu.ng/admission"],
         "context": [""]
@@ -255,19 +255,19 @@
       "context_set": ""
    },
     {
-      "tag": "first semester",
+      "tag": "firstsemester",
       "patterns": ["When is first semester resumption date?", "when are student to resume for first semester?"],
       "responses": ["First semester of the 2023/2024 academic session is scheduled to commence on 18th September, 2023."],
       "context": [""]
           },
     {
-      "tag": "first semester break",
+      "tag": "firstsemesterbreak",
       "patterns": ["When is first semester break?", "when are student to for first semester break?"],
       "responses": ["First  semester break of the 2023/2024 academic session is scheduled to commence on February 22nd 2024 - April 5th 2024."],
       "context": [""]
     },
     {
-      "tag": "second semester",
+      "tag": "secondsemester",
       "patterns": ["When is second semester resumption date?", "when are student to resume for second semester?"],
       "responses": ["Second semester of the 2023/2024 academic session is scheduled to commence on April 8th 2024.\n Second Semester Lectures Begin April 9th 2024.\n Departmental week is on April 15th - April 16th 2024.\n Second Semester Examinations begins on August 1st - August 12th 2024"],
       "context": [""]
@@ -291,7 +291,7 @@
          "how many libraries"
       ],
       "responses": [
-         "TThe Bingham University Library was established in April 2006, with Pastor John O. Arosanyin as the University Librarian. Support primarily came from the Society for International Missions (SIM), facilitated by Mr. Howard Claassen and Dr. Jim Kraakevik.\n During Academic Semester the Library is open:\n Mondays to Fridays 8:30AM to 10: 00PM\n Saturdays 9:00AM to 4:00PM"
+         "The Bingham University Library was established in April 2006, with Pastor John O. Arosanyin as the University Librarian. Support primarily came from the Society for International Missions (SIM), facilitated by Mr. Howard Claassen and Dr. Jim Kraakevik.\n During Academic Semester the Library is open:\n Mondays to Fridays 8:30AM to 10: 00PM\n Saturdays 9:00AM to 4:00PM"
       ],
       "context_set": ""
    },
@@ -382,6 +382,7 @@
   "patterns": [
      "What is the requirement for admission in pharmacy",
      "what do i need to be admitted in pharmacy",
+     "what are the requirements for admission into pharmacy",
      "admission pharmacy",
      "admit pharmacy"
   ],
@@ -529,7 +530,7 @@
   "context": [""]
 },
 {
-  "tag": "jamb_requirement",
+  "tag": "jambrequirement",
   "patterns": [
     "Does Bingham University require JAMB?",
     "Is JAMB necessary for admission to Bingham University?"
@@ -540,7 +541,7 @@
   "context": [""]
 },
 {
-  "tag": "second_choice",
+  "tag": "secondchoice",
   "patterns": [
     "Does Bingham University accept second choice candidates?",
     "Can I apply to Bingham University if I didn't select it as my first choice?"
@@ -551,9 +552,10 @@
   "context": [""]
 },
 {
-  "tag": "student_population",
+  "tag": "population",
   "patterns": [
     "How many students are enrolled at Bingham University?",
+    "How many students are there in Bingham University?",
     "What is the student population at Bingham University?"
   ],
   "responses": [
@@ -562,7 +564,7 @@
   "context": [""]
 },
 {
-  "tag": "nursing_program",
+  "tag": "nursingprogram",
   "patterns": [
     "Does Bingham University offer a nursing program?",
     "Is nursing offered at Bingham University?"
@@ -573,7 +575,7 @@
   "context": [""]
 },
 {
-  "tag": "accreditation_nuc",
+  "tag": "accreditationnuc",
   "patterns": [
     "Is Bingham University accredited by NUC?",
     "Are Bingham University's programs accredited?"
@@ -584,7 +586,7 @@
   "context": [""]
 },
 {
-  "tag": "rules_academic_integrity",
+  "tag": "rulesacademicintegrity",
   "patterns": [
     "What is not allowed in Bingham University?",
     "What are the rules regarding academic integrity at Bingham University?"
