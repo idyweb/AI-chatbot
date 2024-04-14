@@ -13,12 +13,23 @@ body {
 
 .container{
   width: 100%;
-  padding-right: var(--bs-gutter-x, 0.75rem);
-  padding-left: var(--bs-gutter-x, 0.75rem);
+  padding-right: var( 0.75rem);
+  padding-left: var( 0.75rem);
   margin-right: auto;
   margin-left: auto;
 }
 
+@media (max-width: 375px) {
+    .container {
+        max-width: 375px;
+    }
+  }
+  
+  @media (max-width: 414px) {
+    .container {
+        max-width: 414px;
+    }
+  }
 @media (min-width: 475px) {
   .container {
     max-width: 475px;
